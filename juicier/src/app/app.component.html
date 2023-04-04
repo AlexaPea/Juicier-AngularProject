@@ -1,0 +1,49 @@
+<div class="navBar">
+  <img src="../assets/logo.png" height="80px" class="nav-logo"/>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="/landing" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+      </li>
+      <li>
+        <a routerLink="/inventoryIngrediants" routerLinkActive="active" ariaCurrentWhenActive="page">Ingrediants</a>
+      </li>
+      <li>
+        <a routerLink="/inventoryBurgers" routerLinkActive="active" ariaCurrentWhenActive="page">Burgers</a>
+      </li>
+      <li>
+        <a routerLink="/creationStation" routerLinkActive="active" ariaCurrentWhenActive="page">Creation Station</a>
+      </li>
+      <li>
+        <a routerLink="/locationScreen" routerLinkActive="active" ariaCurrentWhenActive="page">Locations</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- <select id="locations" (change)="onLocationChange($event)"> -->
+  <select id="locations" >
+    <option value="mystic_falls">Mystic Falls</option>
+    <option value="riverdale">Riverdale</option>
+    <option value="sunnydale">Sunnydale</option>
+  </select>
+
+  <!-- <select [(ngModel)]="selectedLocation" (ngModelChange)="onLocationChange()">
+    <option value="mystic_falls">Mystic Falls</option>
+    <option value="riverdale">Riverdale</option>
+    <option value="sunnydale">Sunnydale</option>
+  </select> -->
+  
+</div>
+
+
+<!-- Outputs Content of navigated to components -->
+<div class="outer-container">
+  <router-outlet></router-outlet> 
+</div>
+
+<div class="footer">
+  <footer>
+    <img src="../assets/logo.png" height="60px" class="nav-logo"/>
+    <small>©2023 Juicier. All rights reserved.</small>
+  </footer>
+</div>

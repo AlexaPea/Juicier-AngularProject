@@ -1,0 +1,115 @@
+<div class="homePage" id="bg">
+    <div class="contents">
+        <div class="greeting-container">
+            <h1>LET'S CHECK OUT</h1>
+            <h1>THAT</h1>
+            <img src="../../assets/words/inventory.png" class="header-logo"/>
+
+            <p>Why settle for less than perfection? Especially when you can make your dream burger within a few clicks!</p>
+            <button class="primary-btn">Get Creating</button>
+        </div>
+
+
+        <div class="header-image">
+            <img src="../../assets/Images/inventoryBurger.png" class="header-img"/>
+        </div>
+
+        <div class="ingrediant-slider">
+            <hr/>
+            <h4 class="ingrediant-heading">Bread</h4>
+
+            <div class="carousel">
+                <div class="card" *ngFor="let breadIngrediants of breadIngrediants; let i=index" >
+                    <div class="top-circle">
+                        <h4>{{breadIngrediants.amount}}</h4>
+                    </div>
+                    <div class="circle">
+                        <img [src]="breadIngrediants.image" class="card-img" alt="Image of burger"/>
+                    </div>
+                    <h3>{{breadIngrediants.name}}</h3>
+                    <button (click)="showPopup = true; selectedIngrediants = pattyIngrediants">Update</button>
+
+                </div>
+            </div>
+        </div>
+
+        <app-popup *ngIf="showPopup" [selectedIngrediants]="selectedIngrediants"></app-popup>
+
+        <div class="ingrediant-slider two">
+            <hr/>
+            <h4 class="ingrediant-heading">Patties</h4>
+
+            <div class="carousel">
+                <div class="card" *ngFor="let pattyIngrediants of pattyIngrediants; let i=index">
+                    <div class="top-circle">
+                        <h4>{{pattyIngrediants.amount}}</h4>
+                    </div>
+                    <div class="circle">
+                        <img [src]="pattyIngrediants.image" class="card-img"/>
+                    </div>
+                    <h3>{{pattyIngrediants.name}}</h3>
+                    <button>Update</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ingrediant-slider two">
+            <hr/>
+            <h4 class="ingrediant-heading">Cheese</h4>
+
+            <div class="carousel">
+                <div class="card"  *ngFor="let cheeseIngrediants of cheeseIngrediants; let i=index">
+                    <div class="top-circle">
+                        <h4>{{cheeseIngrediants.amount}}</h4>
+                    </div>
+                    <div class="circle">
+                        <img [src]="cheeseIngrediants.image" class="card-img"/>
+                    </div>
+                    <h3>{{cheeseIngrediants.name}}</h3>
+                    <button>Update</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ingrediant-slider two">
+            <hr/>
+            <h4 class="ingrediant-heading">Garnish</h4>
+
+            <div class="carousel-container" style="overflow-x: auto">
+                <div class="carousel" #carousel>
+                    <div class="card"  *ngFor="let garnishIngrediants of garnishIngrediants; let i=index">
+                        <div class="top-circle">
+                            <h4>{{garnishIngrediants.amount}}</h4>
+                        </div>
+                        <div class="circle">
+                            <img [src]="garnishIngrediants.image" class="card-img"/>
+                        </div>
+                        <h3>{{garnishIngrediants.name}}</h3>
+                        <button>Update</button>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="ingrediant-slider two">
+            <hr/>
+            <h4 class="ingrediant-heading">Sauce</h4>
+
+            <div class="carousel">
+                <div class="card"  *ngFor="let sauceIngrediants of sauceIngrediants; let i=index">
+                    <div class="top-circle">
+                        <h4>{{sauceIngrediants.amount}}</h4>
+                    </div>
+                    <div class="circle">
+                        <img [src]="sauceIngrediants.image" class="card-img"/>
+                    </div>
+                    <h3>{{sauceIngrediants.name}}</h3>
+                    <button>Update</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

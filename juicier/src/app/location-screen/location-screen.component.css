@@ -1,0 +1,91 @@
+#bg{
+    height: 240vh;  
+    /* width: 100%;   */
+    color: #fff;
+    background-image: url("../../assets/Backgrounds/Inventory.png");  
+    background-size: 100% ;  
+    background-size: cover;  
+    border: 0;
+    margin: 0;
+    margin-top: -220px;
+    margin-left: -50px;
+    font-family: 'poppins';
+    
+}
+
+.header-img{
+    height: 900px;
+    float: right;
+    margin-top: -555px;
+    margin-right: -190px;
+}
+
+.contents{
+    padding-top: 410px;
+    padding-left: 150px;
+}
+
+
+
+.greeting-container h1{
+    font-size: 74px;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+    font-weight:900;
+    line-height: 120px;
+}
+
+.greeting-container p{
+    width: 480px;
+    margin-top: -50px;
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+
+}
+.header-logo{
+    display: absolute;
+    height: 255px;
+    margin-top: -80px;
+
+}
+
+button{
+    background-color: #FCA877;
+    padding: 12px;
+    color: #ffffff;
+    font-family: 'Maybe Coffee';
+    border-radius: 20px;
+    margin-top: 15px;
+    width: 180px;
+    font-size: 16px;
+}
+
+.locations{
+    margin-top: 300px;
+}
+
+.locations p{
+    margin:0px;
+    padding:0px;
+    margin-top: -20px;
+}
+
+.map-img{
+    width: 650px;
+    float: left;
+}
+
+.location-info{
+    background-color: #FFF6F6;
+    height: 585px;
+    width: 610px;
+    float: left;
+    margin-left: 30px;
+    margin-top: -55px;
+    border-radius: 20px;
+    color: #FCA877;
+    padding: 30px;
+}
