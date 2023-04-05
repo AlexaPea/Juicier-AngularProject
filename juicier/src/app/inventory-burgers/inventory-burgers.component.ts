@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Burger } from '../models/burger';
+import { CraftService } from '../services/craft.service';
 
 @Component({
   selector: 'app-inventory-burgers',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./inventory-burgers.component.css']
 })
 export class InventoryBurgersComponent {
+
+  
+
 
 }

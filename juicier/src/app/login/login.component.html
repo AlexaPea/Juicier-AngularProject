@@ -1,4 +1,4 @@
-<div class="homePage" id="bg">
+<div class="homePage" id="bg" >
     <div class="contents">
         <div class="greeting-container">
           
@@ -14,16 +14,16 @@
 
         <div class="login-form">
             <mat-form-field class="example-full-width">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput  placeholder="Ex. pat@example.com">
+                <mat-label>Username</mat-label>
+                <input [formControl]="username" type="Text" matInput  placeholder="Username">
             </mat-form-field>
 
             <mat-form-field class="example-full-width">
               <mat-label>Favourite Burger</mat-label>
-              <input type="text" matInput  placeholder="CheesySqueez">
+              <input [formControl]="favouriteBurger"  type="text" matInput  placeholder="CheesySqueez">
             </mat-form-field>
 
-            <button>Login</button>
+            <button (click)="checkVerification()">Login</button>
 
         </div>
 

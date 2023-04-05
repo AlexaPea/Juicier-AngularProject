@@ -1,0 +1,22 @@
+<!-- 
+<div class="craft-container">
+    <div class="craft-modal"> 
+        <img [src]="burger.image" width="50" height="50"/>
+        <h2>{{burger.name}}</h2>
+        <h5>{{burger.description}}</h5>
+        
+        <h6>Ingredients:</h6>
+        <ul>
+            <li *ngFor="let ingrediant of burger.ingrediants">
+                <span>{{ingrediant.amountNeeded}} x </span>
+                <span> {{ingrediant.inventoryId.title}}</span>
+                <span>({{ingrediant.inventoryId.amount}} available)</span>
+            </li>
+        </ul>
+        <div class="craft-button">
+            <p>Current Amount: {{burger.amount}}</p>
+            <button (click)="craftBurger(burger._id!)" [disabled]="isCrafting" *ngIf="burger.craftable" class="update-btn" mat-flat-button color="accent">Craft</button>
+            <button *ngIf="!burger.craftable" class="update-btn" mat-flat-button color="disabled">Missing Ingrediants</button>
+        </div> 
+</div>
+</div>> -->

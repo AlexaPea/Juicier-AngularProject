@@ -17,6 +17,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PopupComponent } from './popup/popup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthOnlyDirective } from './directives/auth-only.directive';
+import { CraftModalComponent } from './craft-modal/craft-modal.component';
 
 
 @NgModule({
@@ -31,7 +34,9 @@ import { PopupComponent } from './popup/popup.component';
     UnknownComponent,
     CarouselComponent,
     SliderComponent,
-    PopupComponent
+    PopupComponent,
+    AuthOnlyDirective,
+    CraftModalComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,9 @@ import { PopupComponent } from './popup/popup.component';
     MatInputModule,
     SlickCarouselModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+    
     // NgxSliderModule
     
   ],

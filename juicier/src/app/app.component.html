@@ -5,23 +5,27 @@
       <li>
         <a routerLink="/landing" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
       </li>
-      <li>
+      <li appAuthOnly  [isVerified]="!isVerified">
+        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+      </li>
+      <li appAuthOnly  [isVerified]="isVerified">
         <a routerLink="/inventoryIngrediants" routerLinkActive="active" ariaCurrentWhenActive="page">Ingrediants</a>
       </li>
-      <li>
+      <li appAuthOnly  [isVerified]="isVerified">
         <a routerLink="/inventoryBurgers" routerLinkActive="active" ariaCurrentWhenActive="page">Burgers</a>
       </li>
-      <li>
+      <li appAuthOnly  [isVerified]="isVerified">
         <a routerLink="/creationStation" routerLinkActive="active" ariaCurrentWhenActive="page">Creation Station</a>
       </li>
-      <li>
+      <li appAuthOnly  [isVerified]="isVerified">
         <a routerLink="/locationScreen" routerLinkActive="active" ariaCurrentWhenActive="page">Locations</a>
       </li>
     </ul>
   </nav>
 
+
   <!-- <select id="locations" (change)="onLocationChange($event)"> -->
-  <select id="locations" >
+  <select id="locations"  appAuthOnly  [isVerified]="isVerified" >
     <option value="mystic_falls">Mystic Falls</option>
     <option value="riverdale">Riverdale</option>
     <option value="sunnydale">Sunnydale</option>

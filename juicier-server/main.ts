@@ -72,7 +72,7 @@ app.post("/user/login", async (req,res) =>{
             const result = await bcrypt.compare(favouriteBurger, user.favouriteBurger!);
             if(result){ //if password patches
                 //OPTION: add JWT Here
-                res.json({error: "Success!", username: user.username, favouriteBurger: user.favouriteBurger});
+                res.json({success: true, username: user.username, favouriteBurger: user.favouriteBurger});
             }else{
                 res.status(400).json({error: "Invalid password"});
             }
@@ -125,60 +125,25 @@ app.delete("/inventory/:id", async(req, res) => {
 
 
 //=====================================================
-//Recipe Handling
+//burger Handling
 
 //Post
-app.post("/burgers", async(req, res) => {
+app.post("/burgers/create", async(req, res) => {
     const {name, description, image, amount, location, ingrediants}= req.body;
     const burger = await BurgerModel.create({name, description, image, amount, location, ingrediants});
     res.send(burger);
 })
 
 
-// app.post('/recipe/create', async (req, res) =>{
-//     const recipeData = [
-//         {
-//             name: "Hammer",
-//             image: "assets/hammer.png",
-//             description: "Use me to nail things",
-//             amount: 0,
-//             ingrediants: [
-//                 {inventoryId: "wood id", amountNeeded: 1},
-//                 {inventoryId: "rock id", amountNeeded: 1},
-//             ]
-//         },
-//         {
-//             name: "Saw",
-//             image: "assets/saw.png",
-//             description: "Use me to make things half",
-//             amount: 0,
-//             ingrediants: [
-//                 {inventoryId: "wood id", amountNeeded: 2},
-//                 {inventoryId: "metal id", amountNeeded: 1},
-//             ]
-//         },
-//     ]
-
-//     // const {name, category, image, amount, location} = req.body;
-//     // const inventory = await InventoryModel.create({name, category, image, amount, location});
-//     // res.send(inventory);
-
-//     for(const recipe of recipeData){
-//         await BurgerModel.create(recipe);
-//     }
-
-//     res.send({success:true})
-// })
-
-//get all my recipes
-app.get('/recipe', async (req,res)=>{
+//get all my burgers
+app.get('/burgers', async (req,res)=>{
     try{
-        const recipes = await BurgerModel.find().populate('ingrediants.ingrediantId').exec();
+        const burgers = await BurgerModel.find().populate('ingrediants.inventoryId').exec();
 
-        const recipesWithAvailability = await Promise.all(
-            recipes.map(async (recipe) =>{
-            //1. loop through each recipe
-            const ingrediants = recipe.ingrediants;
+        const burgersWithAvailability = await Promise.all(
+            burgers.map(async (burger) =>{
+            //1. loop through each burger
+            const ingrediants = burger.ingrediants;
             let craftable = true;
 
             //2. loop through each ingrediant and check if there is enough in inventory
@@ -195,14 +160,14 @@ app.get('/recipe', async (req,res)=>{
                 }
             }
 
-            //3. return the recipe with new craftable property
-            return {...recipe.toObject(), craftable };
+            //3. return the burgers with new craftable property
+            return {...burger.toObject(), craftable };
 
         })
         )
 
-        //4. respond with new recipe data that includes craftable
-        res.send(recipesWithAvailability)
+        //4. respond with new burger data that includes craftable
+        res.send(burgersWithAvailability)
 
     }catch(err){
         console.log(err);
@@ -211,6 +176,51 @@ app.get('/recipe', async (req,res)=>{
     }
    
 })
+
+
+//endpoint to craft the burger (option: checking if there are enough items)
+app.post('/burgers/craft', async (req,res)=>{
+    const { burgerId } = req.body;
+
+    try {
+
+        const {burgerId} = req.body;
+
+        const burger = await BurgerModel.findById(burgerId).exec();
+
+        if(burger){//checking if a burger has been found
+
+            burger.amount!++ //incrementing burger amount
+            burger.save();
+    
+            //Task - Update inventory amount
+
+            //loop through each ingrediant
+            const ingrediants = burger.ingrediants!
+
+            for(const ingrediant of ingrediants){
+                const inventoryId = ingrediant.inventoryId;
+                const inventory = await InventoryModel.findById(inventoryId).exec();
+                if(inventory){
+                    inventory.amount! -= ingrediant.amountNeeded!; //subtract the amt needed to craft
+                    await inventory.save();
+                }
+            }
+
+
+
+        }
+
+        res.send({success: true})
+        
+    } catch (err) {
+
+        console.log(err);
+        res.status(500).send({error: err})
+    }
+})
+
+
 
 
 

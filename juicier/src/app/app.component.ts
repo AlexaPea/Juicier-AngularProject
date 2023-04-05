@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IngrediantService } from './services/ingrediants.service';
+import { ChangeDetectorRef } from '@angular/core';
 import { Ingrediant } from './models/ingrediant';
 import { Observable } from 'rxjs';
 
@@ -12,6 +13,16 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'juicier';
 
+    //10 - Is our user verified
+    constructor(private cdRef: ChangeDetectorRef) {}
+    //ngOnInnit that gets the storage and then sets the variable 
+    isVerified: boolean = false;
+
+    ngOnInit() {
+      this.isVerified = localStorage.getItem('token') ? true : false;
+      this.cdRef.detectChanges();
+    }
+    
   // selectedLocation: string = '';
 
   // constructor(private ingrediantService: IngrediantService) {}
