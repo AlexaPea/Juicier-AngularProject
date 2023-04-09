@@ -1,0 +1,25 @@
+<div class="popup">
+    <div class="left-pannel">
+        <div class="circle">
+            <img [src]="selectedBurger.image" class="card-img" alt="Image of burger"/>
+        </div>
+    </div>
+    <div class="right-pannel">
+        
+    </div>
+    <h2>{{ selectedBurger.name }}</h2>
+    <p>{{ selectedBurger.description }}</p>
+    <h4>Ingrediants</h4>
+    <ul [ngClass]="{'multi-column': selectedBurger.ingrediants.length > 5}">
+        <li  *ngFor="let ingrediant of selectedBurger.ingrediants" >
+          <span><strong><p> {{ingrediant.inventoryId.category}}:</p></strong></span>
+          <span>{{ingrediant.inventoryId.name}} x {{ingrediant.amountNeeded}}</span>
+          <span><div [ngClass]="getAvailabilityClass(ingrediant)">{{ ingrediant.inventoryId.amount }} available</div></span>
+        </li>
+      </ul>
+    
+      <div class="btn-container">
+        <button class="primary-btn" (click)="closePopup()" >Build</button>
+        <button class="secondary-btn"  (click)="closePopup()" >Cancel</button>
+      </div>
+  </div>

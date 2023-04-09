@@ -1,0 +1,176 @@
+.popup{
+    width: 85%;
+    height: 430px;
+    background-color: #FFF6F6;
+    border-radius: 50px;
+    color: #FCA877;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 50px;
+    position:absolute;
+    z-index: 1000;
+    margin-top:-500px; /* default y position */
+}
+
+.circle{
+    width: 370px;
+    height: 370px;
+    border-radius: 200px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-left: 25px;
+    /* margin-top: 90px; */
+
+}
+
+.circle img{
+    height: 332px;
+    margin: 0 auto;
+    margin-left: 30px;
+}
+
+
+
+.left-pannel{
+    width: 40%;
+    float: left;
+}
+
+.right-pannel{
+    width: 40%;
+}
+
+h2{
+    font-size: 42px;
+    padding-top: 10px;
+    font-family: 'Poppins';
+    font-weight:900;
+    padding-bottom: 10px;
+}
+
+h4{
+    font-size: 28px;
+    padding-top: 10px;
+    font-family: 'Poppins';
+    font-weight:900;
+}
+
+p{
+    width: 90%;
+}
+
+input{
+    background-color: #FFD1D1;
+    border: none;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 15px;
+    height: 50px;
+    font-size: 18px;
+    color: white;
+    width: 140px;
+    display: block;
+    margin-bottom: 20px;
+    
+}
+
+.primary-btn{
+    background-color: #FCA877;
+    padding: 12px;
+    color: #ffffff;
+    font-family: 'Maybe Coffee';
+    border-radius: 20px;
+    margin-top: 15px;
+    width: 180px;
+    font-size: 16px;
+    font-weight: 100;
+    border: none;
+    margin-right: 20px;
+    margin-top: 0;
+}
+
+.secondary-btn{
+    background-color: #FFFFFF;
+    padding: 12px;
+    color: #FCA877;
+    font-family: 'Maybe Coffee';
+    border-radius: 20px;
+    margin-top: 15px;
+    width: 180px;
+    font-size: 16px;
+    font-weight: 100;
+    border: 1px solid #FCA877;
+    margin-top: 0;
+}
+
+
+li span, li p,li div{
+    display: inline;
+    padding-right: 5px;
+}
+
+
+.available{
+    background-color: #E0FE9B;
+    color: #B0D066;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 15px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    float: right;
+    margin-right: 80px;
+  }
+  
+  .notAvailable {
+    background-color: #FFD1D1;
+    color: #EB9D9D;
+    padding: 5px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+    float: right;
+
+  }
+
+  ul {
+    list-style: none;
+    width: 400px; /* set a fixed width */
+    margin-left: -40px;
+    float: left;
+  }
+  
+  li {
+    display: inline-block;
+    width: 380px; /* set a fixed width for each list item */
+    margin-right: 20px; /* add some spacing between list items */
+    margin-bottom: 10px; /* add some spacing below the last list item */
+    position: relative;
+    break-inside: avoid-column; /* prevent column breaks within the li element */
+  }
+  
+  li:nth-child(n+5) {
+    margin-left: 180px; /* move the sixth and subsequent li elements to the second column */
+  }
+  
+  .multi-column {
+    columns: 2;
+    margin-left: -40px;
+  }
+  
+  .multi-column li {
+    margin-bottom: 10px;
+    margin-right: 10px; /* add spacing between columns */
+  }
+  
+  .btn-container {
+    margin-left: 40%;
+    display: block;
+    width: 100%;
+    clear: both; /* to start on a new line */
+  }
+  
+  

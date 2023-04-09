@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IngrediantService } from '../services/ingrediants.service';
 import { Ingrediant } from '../models/ingrediant';
-import { Pipe, PipeTransform } from '@angular/core';
-import { ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-inventory-ingrediants',

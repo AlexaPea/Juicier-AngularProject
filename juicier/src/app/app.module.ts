@@ -20,6 +20,7 @@ import { PopupComponent } from './popup/popup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthOnlyDirective } from './directives/auth-only.directive';
 import { CraftModalComponent } from './craft-modal/craft-modal.component';
+import { BuildpopupComponent } from './buildpopup/buildpopup.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { CraftModalComponent } from './craft-modal/craft-modal.component';
     SliderComponent,
     PopupComponent,
     AuthOnlyDirective,
-    CraftModalComponent
+    CraftModalComponent,
+    BuildpopupComponent
   ],
   imports: [
     BrowserModule,

@@ -73,7 +73,7 @@ button{
 
 .burger-slider{
     width: 90%;
-    height: 440px;
+    height: 480px;
     margin: 0 auto;
     background-color: #FFF6F6;
     color: #FCA877;
@@ -98,13 +98,15 @@ button{
 }
 .card{
     height: 330px;
-    width: 280px;
+    width: 280px!important;
     background-color: #FFD1D1;
     border-radius: 50px;
     padding-top: 30px;
     text-align: center;
     align-items: center;
     color: #ffffff;
+    float: left;
+    margin-right: 30px;
 }
 
 .circle{
@@ -165,4 +167,17 @@ hr{
     border: none;
     position: absolute;
     margin-top: 5px;
+}
+
+.carousel {
+    display: flex;
+    width: auto; 
+    height: 800px;
+    padding-top: 21px;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: scroll;
+    /* height: 800px; */
 }
