@@ -173,4 +173,7 @@ li span, li p,li div{
     clear: both; /* to start on a new line */
   }
   
+  .primary-btn.missing{
+    background-color: #fca87754;
+  }
   
