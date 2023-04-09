@@ -33,7 +33,9 @@
             </div>
         </div>
 
-        <app-popup *ngIf="showPopup" [selectedIngrediants]="selectedIngrediants"></app-popup>
+        <app-popup *ngIf="showPopup" [selectedIngrediants]="selectedIngrediants" (close)="showPopup = false"></app-popup>
+     
+
 
         <div class="ingrediant-slider two">
             <hr/>
@@ -48,7 +50,7 @@
                         <img [src]="pattyIngrediants.image" class="card-img"/>
                     </div>
                     <h3>{{pattyIngrediants.name}}</h3>
-                    <button>Update</button>
+                    <button (click)="showPopup = true;  selectedIngrediants = pattyIngrediants">Update</button>
                 </div>
             </div>
         </div>
@@ -66,7 +68,7 @@
                         <img [src]="cheeseIngrediants.image" class="card-img"/>
                     </div>
                     <h3>{{cheeseIngrediants.name}}</h3>
-                    <button>Update</button>
+                    <button (click)="showPopup = true; selectedIngrediants = cheeseIngrediants">Update</button>
                 </div>
             </div>
         </div>
@@ -85,7 +87,7 @@
                             <img [src]="garnishIngrediants.image" class="card-img"/>
                         </div>
                         <h3>{{garnishIngrediants.name}}</h3>
-                        <button>Update</button>
+                        <button (click)="showPopup = true; selectedIngrediants = garnishIngrediants">Update</button>
                     </div>
                 </div>
             </div>
@@ -105,7 +107,7 @@
                         <img [src]="sauceIngrediants.image" class="card-img"/>
                     </div>
                     <h3>{{sauceIngrediants.name}}</h3>
-                    <button>Update</button>
+                    <button (click)="showPopup = true; selectedIngrediants = sauceIngrediants">Update</button>
                 </div>
             </div>
         </div>

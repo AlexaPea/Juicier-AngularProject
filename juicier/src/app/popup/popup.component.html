@@ -1,0 +1,20 @@
+<div class="popup"[style.top.px]="getYPosition(selectedIngrediants)">
+    <div class="left-pannel">
+        <div class="circle">
+            <img [src]="selectedIngrediants.image" class="card-img" alt="Image of burger"/>
+        </div>
+    </div>
+    <div class="right-pannel">
+        
+    </div>
+    <h2>{{ selectedIngrediants.name }}</h2>
+    <p>{{ getDescription() }}</p>
+    <h4>Amount</h4>
+    <input type="number" matInput placeholder="0" color="accent"
+    [value]="selectedIngrediants.amount"
+    (change)="detectAmountChange($event)"
+    > 
+
+    <button class="primary-btn" (click)="updateAmount(selectedIngrediants._id!)" (click)="closePopup()" >Update</button>
+    <button class="secondary-btn"  (click)="closePopup()" >Cancel</button>
+  </div>

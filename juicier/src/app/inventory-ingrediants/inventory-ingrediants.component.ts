@@ -24,6 +24,7 @@ export class InventoryIngrediantsComponent {
     garnishIngrediants: Ingrediant[] =[];
     sauceIngrediants: Ingrediant[] =[];
 
+    popupY: number = 0;
     
  ngOnInit(){
   //READ using service
@@ -36,6 +37,8 @@ export class InventoryIngrediantsComponent {
     this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
     this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
   })
+
+
 
 }
 
