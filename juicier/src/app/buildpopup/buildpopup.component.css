@@ -154,7 +154,7 @@ li span, li p,li div{
     break-inside: avoid-column; /* prevent column breaks within the li element */
   }
   
-  li:nth-child(n+5) {
+  li:nth-child(n+5), li:nth-child(5) {
     margin-left: 180px; /* move the sixth and subsequent li elements to the second column */
   }
   

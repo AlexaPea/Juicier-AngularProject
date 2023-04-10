@@ -64,7 +64,7 @@ button{
 }
 
 .locations{
-    margin-top: 300px;
+    margin-top: 260px;
 }
 
 .locations p{
@@ -84,23 +84,24 @@ button{
     width: 610px;
     float: left;
     margin-left: 30px;
-    margin-top: -55px;
+    margin-top: -95px;
     border-radius: 20px;
     color: #FCA877;
     padding: 30px;
 }
 
-
 h3{
     font-family: 'Poppins';
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 20px;
+    font-size: 24px;
+    margin-bottom: 30px;
   }
 
 h2{
-font-family: 'Poppins';
+font-family: 'Maybe Coffee';
 font-size: 50px;
-font-weight: 700;
+font-weight: 500;
 margin-top: 20px;
 margin-bottom: 40px;
 }
@@ -127,3 +128,31 @@ margin-bottom: 40px;
 .active {
     filter: brightness(130%);
   }
+
+  ::ng-deep .mat-expansion-panel {
+    background-color: #FFFFFF;
+    color: #FCA877;
+    box-shadow: none;
+    font-family: 'Poppins';
+  }
+
+::ng-deep .mat-accordion, ::ng-deep .mat-expansion-panel-content{
+    box-shadow: none;
+    font-family: 'Poppins'!important;
+}
+::ng-deep .mat-expansion-panel-header{
+    box-shadow: none;
+    font-family: 'Poppins'!important;
+    font-weight: 600!important;
+    }
+ul{
+    list-style: none;
+}
+::ng-deep .mat-expansion-panel-header-description,::ng-deep .mat-expansion-indicator::after {
+    color: #FCA877!important;
+}
+
+.text{
+    content: '\a';
+    white-space: pre;
+}

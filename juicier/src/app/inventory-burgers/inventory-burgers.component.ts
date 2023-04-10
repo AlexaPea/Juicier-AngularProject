@@ -51,10 +51,14 @@ export class InventoryBurgersComponent {
 
 
         //scroll
-        private carousel!: HTMLElement;
-        private arrowLeft!: HTMLElement;
-        private arrowRight!: HTMLElement;
-      
+        menuCarousel!: HTMLElement;
+        specialCarousel!: HTMLElement;
+        menuArrowLeft!: HTMLElement;
+        menuArrowRight!: HTMLElement;
+        specialArrowLeft!: HTMLElement;
+        specialArrowRight!: HTMLElement;
+        
+
         public scrollAmount = 510; // adjust as needed
       
 
@@ -62,17 +66,26 @@ export class InventoryBurgersComponent {
         ngOnInit() {
           this.getRecipes()
 
-
-          this.carousel = this.elementRef.nativeElement.querySelector('.carousel-container');
-          this.arrowLeft = this.elementRef.nativeElement.querySelector('.arrow-left');
-          this.arrowRight = this.elementRef.nativeElement.querySelector('.arrow-right');
-        }
-      
-        public scroll(amount: number) {
-          this.carousel.scrollBy({
-            left: amount,
-            behavior: 'smooth'
+          this.menuCarousel = this.elementRef.nativeElement.querySelector('.menu-carousel');
+          this.specialCarousel = this.elementRef.nativeElement.querySelector('.special-carousel');
+          this.menuArrowLeft = this.elementRef.nativeElement.querySelector('.menu-carousel .arrow-left');
+          this.menuArrowRight = this.elementRef.nativeElement.querySelector('.menu-carousel .arrow-right');
+          this.specialArrowLeft = this.elementRef.nativeElement.querySelector('.special-carousel .arrow-left');
+          this.specialArrowRight = this.elementRef.nativeElement.querySelector('.special-carousel .arrow-right');
+      }
+        
+        public scroll(amount: number, carousel: HTMLElement) {
+          carousel.scrollBy({
+              left: amount,
+              behavior: 'smooth'
           });
         }
-
+        
+        public scrollMenu(amount: number) {
+            this.scroll(amount, this.menuCarousel);
+        }
+        
+        public scrollSpecial(amount: number) {
+            this.scroll(amount, this.specialCarousel);
+        }
 }

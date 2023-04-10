@@ -21,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthOnlyDirective } from './directives/auth-only.directive';
 import { CraftModalComponent } from './craft-modal/craft-modal.component';
 import { BuildpopupComponent } from './buildpopup/buildpopup.component';
-
+import { Pipe, PipeTransform } from '@angular/core';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { BuildpopupComponent } from './buildpopup/buildpopup.component';
     SlickCarouselModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule
     
     // NgxSliderModule
     
@@ -58,3 +60,11 @@ import { BuildpopupComponent } from './buildpopup/buildpopup.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+@Pipe({ name: 'keys' })
+export class KeysPipe implements PipeTransform {
+  transform(value: any, args?: any): any {
+    if (!value) return null;
+    return Object.keys(value);
+  }
+}

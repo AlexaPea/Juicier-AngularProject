@@ -14,59 +14,49 @@
         </div>
 
         <div class="burger-slider">
-            <hr/>
-            <h4 class="burger-heading">Menu Burgers</h4>
-          
-            <div class="carousel-container">
-          
+          <hr/>
+          <h4 class="burger-heading">Menu Burgers</h4>
+          <div class="carousel-container menu-carousel">
               <div class="carousel">
-             <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
-                <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
-                <div class="card" *ngFor="let burger of regularBurgers">
-                  <div class="top-circle">
-                    <h4>{{ burger.amount }}</h4>
+                <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scrollMenu(-scrollAmount)">
+                <img src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scrollMenu(scrollAmount)">
+                  <div class="card" *ngFor="let burger of regularBurgers">
+                    <div class="top-circle">
+                      <h4>{{ burger.amount }}</h4>
+                    </div>
+                                       
+                    <div class="circle">
+                      <img [src]="burger.image" class="card-img" />
+                    </div>
+                    <h3>{{ burger.name }}</h3>
+                    <button (click)="showPopup = true; selectedBurger = burger">Build</button>
                   </div>
-                                     
-                  <div class="circle">
-                    <img [src]="burger.image" class="card-img" />
-                  </div>
-                  <h3>{{ burger.name }}</h3>
-                  <button (click)="showPopup = true; selectedBurger = burger">Build</button>
-                </div>
               </div>
-        
-            </div>
           </div>
-          
-          
-
-        <app-buildpopup *ngIf="showPopup" [selectedBurger]="selectedBurger" (close)="showPopup = false"></app-buildpopup>
-     
-
-        <div class="burger-slider two">
-            <hr/>
-            <h4 class="burger-heading">Special Creations</h4>
-
-            <div class="carousel-container">
-          
+      </div>
+      <app-buildpopup *ngIf="showPopup" [selectedBurger]="selectedBurger" (close)="showPopup = false"></app-buildpopup>
+      <div class="burger-slider two">
+          <hr/>
+          <h4 class="burger-heading">Special Creations</h4>
+          <div class="carousel-container special-carousel">
               <div class="carousel">
-             <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
-                <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
-                <div class="card" *ngFor="let burger of customBurgers">
-                  <div class="top-circle">
-                    <h4>{{ burger.amount }}</h4>
+                  <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scrollSpecial(-scrollAmount)">
+                  <img src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scrollSpecial(scrollAmount)">
+                  <div class="card" *ngFor="let burger of customBurgers">
+                    <div class="top-circle">
+                      <h4>{{ burger.amount }}</h4>
+                    </div>
+                                       
+                    <div class="circle">
+                      <img [src]="burger.image" class="card-img" />
+                    </div>
+                    <h3>{{ burger.name }}</h3>
+                    <button (click)="showPopup = true; selectedBurger = burger">Build</button>
                   </div>
-                                     
-                  <div class="circle">
-                    <img [src]="burger.image" class="card-img" />
-                  </div>
-                  <h3>{{ burger.name }}</h3>
-                  <button (click)="showPopup = true; selectedBurger = burger">Build</button>
-                </div>
               </div>
-        
-            </div>
-        </div>
+          </div>
+      </div>
+      
 
 
 

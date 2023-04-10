@@ -26,6 +26,12 @@ export class IngrediantService {
     );
   }
 
+  locationGetItems(): Observable<Ingrediant[]> {
+    return this.http.get<Ingrediant[]>(this.url);
+  };
+
+
+
   //CREATE
   createNewItem(item: Ingrediant): Observable<Ingrediant>{
     return this.http.post<Ingrediant>(this.url, item);

@@ -34,6 +34,8 @@ export class CreationStationComponent {
 
   isCreated: Boolean = false;
   ngOnInit() {
+
+    this.isCreated = false;
     //READ using service
     //5 - update
     this.ingrediantService.getAllItems().subscribe((data) => {
@@ -143,7 +145,7 @@ createBurger() {
  }
  closeCreated() {
   this.isCreated = false;
-  this.router.navigate(['/inventoryIngrediants']);
+  this.router.navigate(['/inventoryBurgers']);
   this.cdRef.detectChanges();
 }
 
