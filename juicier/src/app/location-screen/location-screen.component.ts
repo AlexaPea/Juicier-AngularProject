@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { IngrediantService } from '../services/ingrediants.service';
 import { Ingrediant } from '../models/ingrediant';
 import { mergeMap, reduce } from 'rxjs/operators';
 import { groupBy } from 'lodash';
-import { toArray } from 'rxjs/operators';
 
 @Component({
   selector: 'app-location-screen',
@@ -16,8 +15,10 @@ export class LocationScreenComponent {
 
   constructor(
     private ingrediantService: IngrediantService, 
+    private cd: ChangeDetectorRef
 ) { 
   this.getIngredients(); // Call the method to get ingredients on page load
+  this.selectedLocation = 'Mystic Falls';
 }
 
 
@@ -36,6 +37,7 @@ export class LocationScreenComponent {
   sunnyDescription: string = "Sunnydale's Juicier - where we specialize in juicy, delicious burgers. Our burgers are grilled to perfection and served on freshly-baked buns, with a variety of toppings to choose from.";
 
   listOfIngrediants: Ingrediant[] =[];
+  ingredients: Ingrediant[] = [];
   groupedIngredients: any;
 
   selectImage(imageNumber: number, value: string) {
@@ -46,7 +48,7 @@ export class LocationScreenComponent {
       if (value === 'Mystic Falls') {
         this.locationName = 'Mystic Falls';
         this.locationDescription = this.mystiDescription;
-        this.selectedLocation = 'mystic-falls';
+        this.selectedLocation = 'Mystic Falls';
       }
     } else if (imageNumber === 2) {
       this.selectedImage1 = '';
@@ -55,7 +57,7 @@ export class LocationScreenComponent {
       if (value === 'Riverdale') {
         this.locationName = 'Riverdale';
         this.locationDescription = this.riverdaleDescription;
-        this.selectedLocation = 'riverdale';
+        this.selectedLocation = 'Riverdale';
       }
     } else if (imageNumber === 3) {
       this.selectedImage1 = '';
@@ -64,16 +66,19 @@ export class LocationScreenComponent {
       if (value === 'Sunnydale') {
         this.locationName = 'Sunnydale';
         this.locationDescription = this.sunnyDescription;
-        this.selectedLocation = 'sunnydale';
+        this.selectedLocation = 'Sunnydale';
       }
     }
     
     this.getIngredients();
   }
   
-
+ngOnInit(){
+  this.selectedLocation = 'Mystic Falls';
+  this.getIngredients();
+}
 getIngredients() {
-  const selectedLocation = sessionStorage.getItem('selectedLocation');
+  const selectedLocation = this.selectedLocation;
   this.ingrediantService.locationGetItems().subscribe((data: Ingrediant[]) => {
     const listOfIngredients = data.filter(ingredient => ingredient.location === selectedLocation);
 
@@ -84,9 +89,14 @@ getIngredients() {
 
     console.log(this.groupedIngredients);
   });
+  setTimeout(() => {
+    this.cd.detectChanges();
+  });
 }
 
-  
+isLow(amount: number): boolean {
+  return amount <= 10;
+}
   
 
 }

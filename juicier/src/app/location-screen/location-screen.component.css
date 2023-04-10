@@ -74,13 +74,13 @@ button{
 }
 
 .map-img{
-    width: 650px;
+    width: 655px;
     float: left;
 }
 
 .location-info{
     background-color: #FFF6F6;
-    height: 585px;
+    height: 590px;
     width: 610px;
     float: left;
     margin-left: 30px;
@@ -155,4 +155,13 @@ ul{
 .text{
     content: '\a';
     white-space: pre;
+}
+
+.low{
+    background-color: #ffd1d148;
+    color: #EB9D9D;
+    border-radius: 10px;
+    padding: 3px;
+    padding-left: 8px;
+    width: 85%;
 }

@@ -25,38 +25,45 @@
                     <mat-expansion-panel  class="mat-elevation-z0">
                       <mat-expansion-panel-header>Bread</mat-expansion-panel-header>
                       <ul>
-                        <li *ngFor="let category of groupedIngredients.Bread">
-                            {{category.name}}: 
-                            {{category.amount}}
-                        </li>
+                        <li *ngFor="let category of groupedIngredients.Bread" [ngClass]="{ 'low': isLow(category.amount) }">
+                            {{category.name}}: {{category.amount}}
+                          </li>
                       </ul>
                     </mat-expansion-panel>
                   
                     <mat-expansion-panel  class="mat-elevation-z0">
                       <mat-expansion-panel-header>Patties</mat-expansion-panel-header>
                       <ul>
-                        <li *ngFor="let category of groupedIngredients.Patty">{{category.name}}: {{category.amount}}</li>
+                        <li *ngFor="let category of groupedIngredients.Patty" [ngClass]="{ 'low': isLow(category.amount) }">
+                            {{category.name}}: {{category.amount}}
+                          </li>
                       </ul>
                     </mat-expansion-panel>
                   
                     <mat-expansion-panel  class="mat-elevation-z0">
                       <mat-expansion-panel-header>Cheese</mat-expansion-panel-header>
                       <ul>
-                        <li *ngFor="let category of groupedIngredients.Cheese">{{category.name}}: {{category.amount}}</li>
+                        <li *ngFor="let category of groupedIngredients.Cheese" [ngClass]="{ 'low': isLow(category.amount) }">
+                            {{category.name}}: {{category.amount}}
+                          </li>
                       </ul>
                     </mat-expansion-panel>
                   
                     <mat-expansion-panel  class="mat-elevation-z0">
                       <mat-expansion-panel-header>Garnish</mat-expansion-panel-header>
                       <ul>
-                        <li *ngFor="let category of groupedIngredients.Garnish">{{category.name}}: {{category.amount}}</li>
+                        <li *ngFor="let category of groupedIngredients.Garnish" [ngClass]="{ 'low': isLow(category.amount) }">
+                            {{category.name}}: {{category.amount}}
+                          </li>
                       </ul>
                     </mat-expansion-panel>
                   
                     <mat-expansion-panel  class="mat-elevation-z0">
                       <mat-expansion-panel-header>Sauce</mat-expansion-panel-header>
                       <ul>
-                        <li *ngFor="let category of groupedIngredients.Sauce">{{category.name}}: {{category.amount}}</li>
+                        <li *ngFor="let category of groupedIngredients.Sauce" [ngClass]="{ 'low': isLow(category.amount) }">
+                            {{category.name}}: {{category.amount}}
+                          </li>
                       </ul>
                     </mat-expansion-panel>
                 </mat-accordion>
