@@ -14,7 +14,17 @@ export class BuildpopupComponent {
   @Input() selectedBurger: any;
   @Output() close: EventEmitter<void> = new EventEmitter<void>();
 
- 
+  getYPosition(selectedBurger: any): number {
+    if (selectedBurger.image === '../../assets/burgers/custom.png') {
+        return 600; // set the y position for bread ingredients
+    }else{
+       return 0; // set the y position for patty ingredients
+    }     
+    }
+
+
+
+
   //service
   constructor(private craftService: CraftService){};
 

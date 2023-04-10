@@ -17,7 +17,10 @@ import { Subject, Subscription } from 'rxjs';
 export class InventoryIngrediantsComponent  implements OnInit{
 
     //service
-    constructor(private ingrediantService: IngrediantService, private elementRef: ElementRef, private cdr: ChangeDetectorRef) { }
+    constructor(
+      private ingrediantService: IngrediantService, 
+      private elementRef: ElementRef, 
+      private cdr: ChangeDetectorRef) { }
 
     //simulate CRUD functionality
     breadIngrediants: Ingrediant[] =[];
@@ -45,27 +48,19 @@ export class InventoryIngrediantsComponent  implements OnInit{
         this.arrowLeft = this.elementRef.nativeElement.querySelector('.arrow-left');
         this.arrowRight = this.elementRef.nativeElement.querySelector('.arrow-right');
 
-        // Subscribe to the watchSessionStorage method to listen for changes to the session storage
+    };
      
-            
-            };
-     
-            getIngredients() {
-              this.ingrediantService.getAllItems().subscribe((data) => {
-                   console.log(data);
-                   this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
-                   this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
-                   this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
-                   this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
-                   this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
-               });
-           }
+    getIngredients() {
+      this.ingrediantService.getAllItems().subscribe((data) => {
+          console.log(data);
+          this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
+          this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
+          this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
+          this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
+          this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
+      });
+  }
            
-          //  onLocationChange() {
-          //       sessionStorage.setItem('selectedLocation', this.selectedLocation);
-          //       this.getIngredients();
-           
-          //  }
 
 public scroll(amount: number) {
   this.carousel.scrollBy({
@@ -73,18 +68,6 @@ public scroll(amount: number) {
     behavior: 'smooth'
   });
 }
-
-// onSessionStorageUpdate(callback) {
-//   window.addEventListener('storage', function (event) {
-//     if (event.storageArea === sessionStorage) {
-//       callback();
-//     }
-//   });
-// }
-
-// onSessionStorageUpdate(function () {
-//   console.log('Session storage updated');
-// });
 
 }
 

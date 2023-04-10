@@ -1,16 +1,10 @@
 <div class="homePage" id="bg" >
     <div class="contents">
+
         <div class="greeting-container">
-          
             <img src="../../assets/words/login.png" class="header-logo"/>
             <p>Hey there friend! We just need you to add your email and remind us what your favourite burger is then you’re good to go!</p>
-
         </div>
-
-
-        <!-- <div class="header-image">
-            <img src="../../assets/Images/bInventoryBurger.png" class="header-img"/>
-        </div> -->
 
         <div class="login-form">
             <mat-form-field class="example-full-width">
@@ -24,19 +18,15 @@
             </mat-form-field>
 
             <button (click)="checkVerification()">Login</button>
-
         </div>
 
-        <div class="error-holder" *ngIf = "isError">
+        <div class="error-holder"  [hidden]="!isError">
             <div class="error-div">
                 <h2>Uh Oh!</h2>
-                <p>Looks like you have entered the incorrect username or password!</p>
+                <p>Looks like you have entered the incorrect username or you forgot your favourite burger...</p>
                 <button (click)="closeError()">Try Again</button>
             </div>
         </div>
-
-
-
 
     </div>
 </div>

@@ -4,6 +4,8 @@ import { Ingrediant } from '../models/ingrediant';
 import { Burger } from '../models/burger';
 import { CraftService } from '../services/craft.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectorRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-creation-station',
@@ -14,7 +16,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class CreationStationComponent {
 
   //service
-  constructor(private ingrediantService: IngrediantService, private craftService: CraftService){};
+  constructor(private ingrediantService: IngrediantService, private craftService: CraftService , private cdRef: ChangeDetectorRef, private router: Router){};
 
   //define
   breadIngrediants: Ingrediant[] =[];
@@ -30,6 +32,7 @@ export class CreationStationComponent {
   selectedSauceIngredient!: Ingrediant;
   burgers: Burger[] =[]
 
+  isCreated: Boolean = false;
   ngOnInit() {
     //READ using service
     //5 - update
@@ -132,9 +135,17 @@ createBurger() {
 
   this.craftService.createNewBurger(addBurger).subscribe((burger) => {
     this.burgers.push(burger)
+    this.isCreated =true;
+    this.cdRef.detectChanges();
+    
   });
   
  }
+ closeCreated() {
+  this.isCreated = false;
+  this.router.navigate(['/inventoryIngrediants']);
+  this.cdRef.detectChanges();
+}
 
 
   

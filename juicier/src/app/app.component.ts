@@ -29,23 +29,23 @@ export class AppComponent implements OnInit {
     this.isVerified = localStorage.getItem('token') ? true : false;
     console.log(this.selectedLocation);
     this.selectedLocation = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
-    this.getIngredients()
+    // this.getIngredients()
   }
 
-getIngredients() {
-   this.ingrediantService.getAllItems().subscribe((data) => {
-        console.log(data);
-        this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
-        this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
-        this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
-        this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
-        this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
-    });
-}
+// getIngredients() {
+//    this.ingrediantService.getAllItems().subscribe((data) => {
+//         console.log(data);
+//         this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
+//         this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
+//         this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
+//         this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
+//         this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
+//     });
+// }
 
 onLocationChange() {
   sessionStorage.setItem('selectedLocation', this.selectedLocation);
-  this.getIngredients();
+  // this.getIngredients();
 
 }
 }

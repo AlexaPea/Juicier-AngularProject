@@ -74,15 +74,15 @@ app.post("/user/login", async (req,res) =>{
                 //OPTION: add JWT Here
                 res.json({success: true, username: user.username, favouriteBurger: user.favouriteBurger});
             }else{
-                res.status(400).json({error: "Invalid password"});
+                res.json({success: false,error: "Invalid password"});
             }
 
         }else{
-            res.status(400).json({error: "User does not exist"});
+            res.json({success: false,error: "User does not exist"});
         }
 
     }catch(error){
-        res.status(400).json({error});
+        res.json({success: false,error});
     }
 
     

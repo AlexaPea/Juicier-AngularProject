@@ -32,11 +32,13 @@ export class LoginComponent {
         // Trigger change detection
         this.cdRef.detectChanges();
         this.isError = false;  
-      } else {
+      } else{
         console.log("An error has occurred");        
         console.log(response);   
-        this.isError = true;     
-        this.cdRef.detectChanges();
+        this.isError = true;
+        this.cdRef.detectChanges(); // Trigger change detection
+        console.log(this.isError);
+        
       }
     })
   }

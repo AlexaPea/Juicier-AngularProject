@@ -1,4 +1,4 @@
-<div class="popup">
+<div class="popup" [style.top.px]="getYPosition(selectedBurger)">
     <div class="left-pannel">
         <div class="circle">
             <img [src]="selectedBurger.image" class="card-img" alt="Image of burger"/>
@@ -9,7 +9,7 @@
     </div>
     <h2>{{ selectedBurger.name }}</h2>
     <p>{{ selectedBurger.description }}</p>
-    <h4>Ingrediants</h4>
+    <h4>Ingredients</h4>
     <ul [ngClass]="{'multi-column': selectedBurger.ingrediants.length > 5}">
         <li  *ngFor="let ingrediant of selectedBurger.ingrediants" >
           <span><strong><p> {{ingrediant.inventoryId.category}}:</p></strong></span>
@@ -20,7 +20,7 @@
     
       <div class="btn-container">
         <button class="primary-btn" (click)="craftBurger(selectedBurger._id!); closePopup()" [disabled]="isCrafting" *ngIf="selectedBurger.craftable">Build</button>
-        <button class="primary-btn missing" *ngIf="!selectedBurger.craftable">Missing Ingrediants!</button>
+        <button class="primary-btn missing" *ngIf="!selectedBurger.craftable">Missing Ingredients!</button>
         <button class="secondary-btn"  (click)="closePopup()" >Cancel</button>
       </div>
   </div>

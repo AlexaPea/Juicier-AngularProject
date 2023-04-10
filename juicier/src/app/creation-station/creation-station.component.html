@@ -69,6 +69,14 @@
               
             </form>
               </div>
+              <div class="created-holder"  [hidden]="!isCreated">
+                <!-- <div class="created-holder"> -->
+                <div class="created-div">
+                    <h2>Whoopie!</h2>
+                    <p>You're officially a burger architect! Enjoy every juicy bite and revel in the fact that you've achieved burger greatness! </p>
+                    <button (click)="closeCreated()">See your burger!</button>
+                </div>
+            </div>             
               
         </div>
 

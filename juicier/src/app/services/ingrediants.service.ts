@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, EventEmitter  } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ingrediant } from '../models/ingrediant';
 import { map } from 'rxjs/operators';
@@ -8,15 +8,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class IngrediantService {
-  onStorageUpdate: EventEmitter<string> = new EventEmitter();
-  constructor(private http:HttpClient) {   window.addEventListener('storage', (event: StorageEvent) => {
-    if (event.storageArea === sessionStorage) {
-      this.onStorageUpdate.emit(event.key!);
-      console.log("working");
-      
-    }
-  });
-} 
+
+  constructor(private http:HttpClient) { }
 
   //3
    url:  string = 'http://localhost:3000/inventory';
@@ -29,9 +22,8 @@ export class IngrediantService {
   getAllItems(): Observable<Ingrediant[]> {
     const selectedLocation = sessionStorage.getItem('selectedLocation') ?? '';
     return this.http.get<Ingrediant[]>(this.url).pipe(
-      map(ingredients => ingredients.filter(ingredient => ingredient.location === selectedLocation))     
+      map(ingredients => ingredients.filter(ingredient => ingredient.location === selectedLocation))
     );
-
   }
 
   //CREATE

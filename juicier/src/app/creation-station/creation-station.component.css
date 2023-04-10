@@ -207,3 +207,42 @@ outline: none;
     margin: 0 auto;
     margin-left: 30%;
   }
+
+  .created-div{
+    position: absolute;
+    background-color: #FFF6F6;
+    width: 400px;
+    height: 400px;
+    border-radius: 200px;
+    color:#FCA877;
+    text-align: center;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+.created-div h2{
+    font-family: 'Maybe Coffee';
+    font-size: 64px;
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+
+.created-div p{
+    font-family: 'Poppins';
+    font-weight: 500;
+    width: 260px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+   
+}
+
+.created-holder{
+    position: absolute;
+    width: 1533px;
+    height: 100vh;
+    top:0;
+    left: 0;
+    background-color: #fea8a879;
+    position: fixed;
+}

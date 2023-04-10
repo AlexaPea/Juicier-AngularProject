@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Burger } from '../models/burger';
 import { CraftService } from '../services/craft.service';
-
+import { filter } from 'rxjs/operators';
 import {OnInit, ElementRef, ViewChild } from '@angular/core';
 
 
@@ -19,6 +19,8 @@ export class InventoryBurgersComponent {
 
       //list of burgers variable
       listOfBurgers: Burger[] =[];
+      customBurgers: Burger[] =[];
+      regularBurgers: Burger[] =[];
 
         //preloader
         isCrafting = false;
@@ -30,12 +32,15 @@ export class InventoryBurgersComponent {
             this.listOfBurgers = data;
             console.log(data);
             
-          })
+            // filter burgers with the custom image
+            this.customBurgers = this.listOfBurgers.filter(burger => burger.image === '../../assets/burgers/custom.png');
+            
+            // filter burgers without the custom image
+            this.regularBurgers = this.listOfBurgers.filter(burger => burger.image !== '../../assets/burgers/custom.png');
+          });
         }
-      
-        // ngOnInit(){
-        //   this.getRecipes()
-        // }
+        
+    
 
         //pop up
         showPopup = false;
