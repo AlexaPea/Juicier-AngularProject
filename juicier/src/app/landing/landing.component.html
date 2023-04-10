@@ -12,16 +12,21 @@
 
         <div class="burger-slider">
             <h1>Burgers</h1>
-            <!-- <div class="carousel">
-                <div class="card">
-                    <div class="circle">
-                        <img src="../../assets/Burger/burger1.png" class="card-img"/>
+            <div class="carousel-container">
+            <div class="carousel">
+                <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
+                <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
+                <div class="carousel">
+                    <div class="card" *ngFor="let burger of listOfBurgers; let i = index"  [ngClass]="{'even': i % 2 == 0, 'odd': i % 2 != 0, 'third': i % 3 == 0}">
+                      <div class="circle">
+                        <img [src]="burger.image" class="card-img" />
+                      </div>
+                      <h3>{{ burger.name }}</h3>
                     </div>
-                    <h3>Lean & Mean</h3>
-                </div>
-            </div> -->
-            <app-carousel></app-carousel>
-            <!-- <app-slider></app-slider> -->
+                  </div>
+            </div> 
+        </div>
+
         </div>
 
         <div class="info-slider">

@@ -24,18 +24,11 @@
   </nav>
 
 
-  <!-- <select id="locations" (change)="onLocationChange($event)"> -->
-  <select id="locations"  appAuthOnly  [isVerified]="isVerified" >
-    <option value="mystic_falls">Mystic Falls</option>
-    <option value="riverdale">Riverdale</option>
-    <option value="sunnydale">Sunnydale</option>
+  <select id="locations" appAuthOnly [isVerified]="isVerified" [(ngModel)]="selectedLocation"  (change)="onLocationChange()">
+    <option value="Mystic Falls">Mystic Falls</option>
+    <option value="Riverdale">Riverdale</option>
+    <option value="Sunnydale">Sunnydale</option>
   </select>
-
-  <!-- <select [(ngModel)]="selectedLocation" (ngModelChange)="onLocationChange()">
-    <option value="mystic_falls">Mystic Falls</option>
-    <option value="riverdale">Riverdale</option>
-    <option value="sunnydale">Sunnydale</option>
-  </select> -->
   
 </div>
 

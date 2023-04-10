@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter  } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ingrediant } from '../models/ingrediant';
 import { map } from 'rxjs/operators';
@@ -8,50 +8,31 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class IngrediantService {
-
-
-  //2 - communication between front and back-end
-  constructor(private http:HttpClient) { }
+  onStorageUpdate: EventEmitter<string> = new EventEmitter();
+  constructor(private http:HttpClient) {   window.addEventListener('storage', (event: StorageEvent) => {
+    if (event.storageArea === sessionStorage) {
+      this.onStorageUpdate.emit(event.key!);
+      console.log("working");
+      
+    }
+  });
+} 
 
   //3
    url:  string = 'http://localhost:3000/inventory';
-  // url:  string = 'http://localhost:3000/inventory/bread';
-  // urlBread:  string = 'http://localhost:3000/BreadInventory';
 
   ingrediants: Ingrediant[] = [];
   BreadIngrediants: Ingrediant[] =[];
 
+  selectedLocation: string = sessionStorage.getItem('selectedLocation') ?? '';
 
-  //READ ALL
-  // getAllItems(): Observable<Ingrediant[]>{
-  //   //Call http to backend server
-  //   let outputIngrediant = this.http.get<Ingrediant[]>(this.url);
-  //   return outputIngrediant;
-   
-  // }
-
-
-  getAllItems(): Observable<Ingrediant[]>{
+  getAllItems(): Observable<Ingrediant[]> {
+    const selectedLocation = sessionStorage.getItem('selectedLocation') ?? '';
     return this.http.get<Ingrediant[]>(this.url).pipe(
-      map(ingredients => ingredients.filter(ingredient => ingredient.location === 'Mystic Falls'))   
+      map(ingredients => ingredients.filter(ingredient => ingredient.location === selectedLocation))     
     );
-    }
 
-  // getAllItems(location: string): Observable<Ingrediant[]> {
-  //   return this.http.get<Ingrediant[]>(this.url).pipe(
-  //     map(ingredients => ingredients.filter(ingredient => ingredient.location === location))
-  //   );
-  //   }
-
-
-    getBreadItems(): Observable<Ingrediant[]>{
-      return this.http.get<Ingrediant[]>(this.url).pipe(
-        map(ingredients => ingredients.filter(ingredient => ingredient.location === 'Mystic Falls'))   
-      );
-      }
-
-
-  
+  }
 
   //CREATE
   createNewItem(item: Ingrediant): Observable<Ingrediant>{
@@ -59,18 +40,13 @@ export class IngrediantService {
   }
 
    //DELETE
- removeItem(id: string): Observable<unknown>{
+  removeItem(id: string): Observable<unknown>{
+    return this.http.delete(`${this.url}/${id}`);
+    //this.items.splice(index,1);
+  }
 
-  return this.http.delete(`${this.url}/${id}`);
-  //this.items.splice(index,1);
- }
-
- //UPDATE
- updateAmount(id: string, newAmount: number): Observable<Ingrediant>{
-
-  return this.http.put<Ingrediant>(`${this.url}/${id}`, {amount: newAmount});
-  // this.items[index].amount = newAmount;
-  // console.log(this.items[index]);
- }
-
+  //UPDATE
+  updateAmount(id: string, newAmount: number): Observable<Ingrediant>{
+    return this.http.put<Ingrediant>(`${this.url}/${id}`, {amount: newAmount});
+  }
 }

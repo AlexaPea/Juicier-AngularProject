@@ -1,5 +1,5 @@
 .popup{
-    width: 83%;
+    width: 87.5%;
     background-color: #FFF6F6;
     border-radius: 50px;
     color: #FCA877;
@@ -9,6 +9,7 @@
     position:absolute;
     z-index: 1000;
     top: 0px; /* default y position */
+    margin-left: -30px;
 }
 
 .circle{

@@ -19,6 +19,8 @@
             <h4 class="ingrediant-heading">Bread</h4>
 
             <div class="carousel">
+                <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
+                <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
                 <div class="card" *ngFor="let breadIngrediants of breadIngrediants; let i=index" >
                     <div class="top-circle">
                         <h4>{{breadIngrediants.amount}}</h4>
@@ -40,17 +42,20 @@
         <div class="ingrediant-slider two">
             <hr/>
             <h4 class="ingrediant-heading">Patties</h4>
-
-            <div class="carousel">
-                <div class="card" *ngFor="let pattyIngrediants of pattyIngrediants; let i=index">
-                    <div class="top-circle">
-                        <h4>{{pattyIngrediants.amount}}</h4>
-                    </div>
-                    <div class="circle">
-                        <img [src]="pattyIngrediants.image" class="card-img"/>
-                    </div>
-                    <h3>{{pattyIngrediants.name}}</h3>
-                    <button (click)="showPopup = true;  selectedIngrediants = pattyIngrediants">Update</button>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
+                    <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
+                    <div class="card" *ngFor="let pattyIngrediants of pattyIngrediants; let i=index">
+                        <div class="top-circle">
+                            <h4>{{pattyIngrediants.amount}}</h4>
+                        </div>
+                        <div class="circle">
+                            <img [src]="pattyIngrediants.image" class="card-img"/>
+                        </div>
+                        <h3>{{pattyIngrediants.name}}</h3>
+                        <button (click)="showPopup = true;  selectedIngrediants = pattyIngrediants">Update</button>
+                </div>
                 </div>
             </div>
         </div>
@@ -58,8 +63,10 @@
         <div class="ingrediant-slider two">
             <hr/>
             <h4 class="ingrediant-heading">Cheese</h4>
-
-            <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel">
+                <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
+                <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
                 <div class="card"  *ngFor="let cheeseIngrediants of cheeseIngrediants; let i=index">
                     <div class="top-circle">
                         <h4>{{cheeseIngrediants.amount}}</h4>
@@ -71,14 +78,17 @@
                     <button (click)="showPopup = true; selectedIngrediants = cheeseIngrediants">Update</button>
                 </div>
             </div>
+            </div>
         </div>
 
         <div class="ingrediant-slider two">
             <hr/>
             <h4 class="ingrediant-heading">Garnish</h4>
 
-            <div class="carousel-container" style="overflow-x: auto">
-                <div class="carousel" #carousel>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
+                    <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
                     <div class="card"  *ngFor="let garnishIngrediants of garnishIngrediants; let i=index">
                         <div class="top-circle">
                             <h4>{{garnishIngrediants.amount}}</h4>
@@ -99,6 +109,8 @@
             <h4 class="ingrediant-heading">Sauce</h4>
 
             <div class="carousel">
+                <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
+                <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
                 <div class="card"  *ngFor="let sauceIngrediants of sauceIngrediants; let i=index">
                     <div class="top-circle">
                         <h4>{{sauceIngrediants.amount}}</h4>

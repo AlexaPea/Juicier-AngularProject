@@ -39,6 +39,7 @@ import { BuildpopupComponent } from './buildpopup/buildpopup.component';
     AuthOnlyDirective,
     CraftModalComponent,
     BuildpopupComponent
+ 
   ],
   imports: [
     BrowserModule,

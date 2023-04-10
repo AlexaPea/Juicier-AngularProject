@@ -16,20 +16,29 @@
         <div class="burger-slider">
             <hr/>
             <h4 class="burger-heading">Menu Burgers</h4>
-
-            <div class="carousel">
-                <div class="card"  *ngFor="let burger of listOfBurgers">
-                    <div class="top-circle">
-                        <h4>{{burger.amount}}</h4>
-                    </div>
-                    <div class="circle">
-                        <img [src]="burger.image" class="card-img"/>
-                    </div>
-                    <h3>{{burger.name}}</h3>
-                    <button  (click)="showPopup = true; selectedBurger = burger">Build</button>
+          
+            <div class="carousel-container">
+          
+              <div class="carousel">
+             <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
+                <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
+                <div class="card" *ngFor="let burger of listOfBurgers">
+                  <div class="top-circle">
+                    <h4>{{ burger.amount }}</h4>
+                  </div>
+                                     
+                  <div class="circle">
+                    <img [src]="burger.image" class="card-img" />
+                  </div>
+                  <h3>{{ burger.name }}</h3>
+                  <button (click)="showPopup = true; selectedBurger = burger">Build</button>
                 </div>
+              </div>
+        
             </div>
-        </div>
+          </div>
+          
+          
 
         <app-buildpopup *ngIf="showPopup" [selectedBurger]="selectedBurger" (close)="showPopup = false"></app-buildpopup>
      

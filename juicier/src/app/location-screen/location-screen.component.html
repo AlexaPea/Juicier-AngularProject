@@ -9,19 +9,24 @@
 
         <div class="header-image">
             <img src="../../assets/Images/location.png" class="header-img"/>
-        </div>
 
+        </div>
         <div class="locations">
             <img src="../../assets/map/map.png" class="map-img"/>
+            <img class="point myst" src="../../assets/map/location1.png" (click)="selectImage(1, 'Mystic Falls')" [class.active]="selectedImage1 === 'Mystic Falls'" />
+            <img class="point river" src="../../assets/map/location2.png" (click)="selectImage(2, 'Riverdale')" [class.active]="selectedImage2 === 'Riverdale'" />
+            <img class="point sunny" src="../../assets/map/location3.png" (click)="selectImage(3, 'Sunnydale')" [class.active]="selectedImage3 === 'Sunnydale'" />
             <div class="location-info">
-                <h2>Location Name</h2>
-                <p>Located in the stunning Mystic falls - this location is one of our most popular!</p>
-                <h3>Stock</h3>
-                <p>Let's see what we've got!</p>
-                <h4>Burgers</h4>
-
+              <h2>{{locationName}}</h2>
+              <p>{{locationDescription}}</p>
+              <h3>Ingredient Inventory</h3>
+              <p>Let's see what we've got!</p>
+              <h3>Burger Inventory</h3>
+              <p>Let's see what we've got!</p>
+              <h3>Low on Stock</h3>
+              <p>Let's see what we've got!</p>
             </div>
-        </div>
+          </div>
 
 
 

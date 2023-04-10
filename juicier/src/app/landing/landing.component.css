@@ -76,7 +76,7 @@
 }
 
 .card{
-    height: 350px;
+    height: 360px;
     width: 250px;
     background-color: #C5E9FD;
     border-radius: 500px;
@@ -105,6 +105,8 @@
     padding-top: 25px;
     font-family: 'Poppins';
     font-weight:900;
+    width: 250px;
+    margin: 0 auto;
 }
 
 .info-slider{
@@ -196,3 +198,64 @@ button{
     width: 150px;
     font-size: 16px;
 }
+
+.header-text{
+    font-family: 'Maybe Coffee';
+}
+
+
+.carousel-container {
+    overflow-x: scroll;
+    /* width: 97%; */
+    height: 100%;
+    margin-top: -10px;
+    width: 86.5%;
+  }
+  
+  .carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+    z-index: 10;
+   
+  }
+  
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    margin-right: 50px;
+    width: 280px; /* adjust as needed */
+    margin-top: 22px;
+  }
+
+  .even {
+    background-color: #FCA877;
+  }
+  
+  .odd {
+    background-color: #DDAEF9;
+
+  }
+  
+  .third {
+    background-color: #C5E9FD;
+  }
+  .arrow-left, .arrow-right{
+    position: absolute;
+    width: 60px;
+    margin-top: 160px;
+    margin-left: -45px;
+    opacity: 0.8;
+    filter: grayscale(100%);
+    filter: brightness(1.5); 
+  }
+
+  .arrow-right{
+    margin-left: 1280px;
+  }

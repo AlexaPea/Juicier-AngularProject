@@ -16,7 +16,60 @@
         </div>
 
         <div class="creation-station">
-            <h1>CREATE</h1>
+       
+
+            <div class="left-pannel">
+                <div class="circle">
+                  <img *ngIf="selectedIngredient" [src]="selectedIngredient.image">
+                </div>
+              </div>
+              
+              <div class="right-pannel">
+                <h1>CREATE</h1>
+                <h1 class="burger-text">burger</h1>
+                <form [formGroup]="newBurger" (ngSubmit)="createBurger()">
+                    
+                    <input type="text" formControlName="name" matInput placeholder="Name you burger!" > 
+                    
+                    <div class="col-container">
+                    <div class="column-one">
+                        <div class="ingrediant" (click)="onIngredientClick(0)">
+                            <strong><p>{{ breadIngrediants[currentIndex[0]].category }}:</p></strong>
+                            <p class="right">{{ breadIngrediants[currentIndex[0]].name }}</p>
+                        </div>
+                        
+                        <div class="ingrediant" (click)="onIngredientClick(1)">
+                            <strong><p>{{ pattyIngrediants[currentIndex[1]].category }}:</p></strong>
+                            <p class="right">{{ pattyIngrediants[currentIndex[1]].name }}</p>
+                        </div>
+                    
+                        <div class="ingrediant" (click)="onIngredientClick(2)">
+                            <strong><p>{{ cheeseIngrediants[currentIndex[2]].category }}:</p></strong>
+                            <p class="right">{{ cheeseIngrediants[currentIndex[2]].name }}</p>
+                        </div>
+                        <div class="ingrediant" (click)="onIngredientClick(4)">
+                            <strong><p>{{ sauceIngrediants[currentIndex[4]].category }}:</p></strong>
+                            <p class="right">{{ sauceIngrediants[currentIndex[4]].name }}</p>
+                            </div>
+                    
+
+                    </div> 
+                    <div class="column-two">
+                        <div *ngFor="let garnish of garnishIngrediants; let i=index" class="ingrediant" (click)="toggleGarnish(i)">
+                            <strong><p>{{ garnish.name }}:</p></strong>
+                            <p class="right">{{ garnishStatus[i] ? 'yes' : 'no' }}</p>
+                        </div>
+                </div>
+                </div>
+
+                <div class="centre">
+                    <button class="primary-btn">Create!</button>
+                </div>
+
+              
+            </form>
+              </div>
+              
         </div>
 
 

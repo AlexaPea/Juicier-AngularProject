@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:"creationStation", component: CreationStationComponent}, 
   {path:"locationScreen", component: LocationScreenComponent}, 
   {path:"login", component: LoginComponent}, 
-  {path:"", redirectTo: 'landing', pathMatch: "full"}, //redirect to list when site opens
+  {path:"", redirectTo: 'login', pathMatch: "full"}, //redirect to list when site opens
   {path:"**", component: UnknownComponent} //404 page - must be at the bottom
 ];
 

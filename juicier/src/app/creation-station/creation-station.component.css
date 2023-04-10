@@ -8,7 +8,7 @@
 
 
 #bg{
-    height: 360vh;  
+    height: 270vh;  
     width: 104.5%; 
     color: #fff;
     background-image: url("../../assets/Backgrounds/creationStation.png");  
@@ -92,12 +92,118 @@ button{
     margin-top: 30px;
 }
 
+.creation-station{
+    margin-top: 500px;
+}
+
 .creation-station h1{
-    font-size: 140px;
+    font-size: 90px;
     color: #6699B6;
-    padding-top: 490px;
+    padding-top: 10px;
     font-family: 'Poppins';
     font-weight:900;
+    padding-bottom: 0;
+    margin-bottom: 25px;
+    
 }
 
 
+   
+.left-pannel{
+ width: 40%;
+ float: left;
+}
+
+.right-pannel{
+    width: 40%;
+    float: left;
+   }
+.circle{
+    height: 450px;
+    width: 450px;
+    border-radius: 400px;
+    background-color: #fff;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.circle img{
+    width: 415px;
+    margin-left: 15px;
+}
+.ingrediant{
+    width: 70%;
+    background-color: #F3FBFF;
+    border-radius: 50px;
+    color: #9FC5DA;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.ingrediant p{
+    display: inline;
+}
+
+.ingrediant .right{
+float: right;
+}
+
+input{
+    background-color: #FFD1D1;
+    border: none;
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 35px;
+    height: 50px;
+    font-size: 18px;
+    color: white;
+    width: 94%;
+    display: block;
+    margin-bottom: 20px;
+    
+}
+
+input:active{
+border:none;
+outline: none;
+}
+
+.burger-text{
+    font-family: 'Maybe Coffee'!important;
+    margin: 10px;
+    padding-bottom: 20px!important;
+    padding-top: 40px!important;
+    font-size: 80px!important;
+    
+}
+
+
+  
+.col-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .column-one {
+    width:1100px;
+    margin-right: 0px!important;
+  }
+
+  .ingrediant{
+    width: 85%;
+  }
+  
+  .column-two {
+    width:1100px;
+    margin-right: 0px;
+  }
+
+  .centre input{
+
+    margin-left: 12%;
+  }
+
+  .centre button{
+    margin: 0 auto;
+    margin-left: 30%;
+  }

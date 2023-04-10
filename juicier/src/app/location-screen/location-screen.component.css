@@ -89,3 +89,41 @@ button{
     color: #FCA877;
     padding: 30px;
 }
+
+
+h3{
+    font-family: 'Poppins';
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+h2{
+font-family: 'Poppins';
+font-size: 50px;
+font-weight: 700;
+margin-top: 20px;
+margin-bottom: 40px;
+}
+
+.point{
+    position: absolute;
+    width: 150px;
+}
+
+.point.myst{
+    margin-top: 400px;
+    margin-left: -450px;
+}
+
+.point.river{
+    margin-top: 150px;
+    margin-left: -600px;
+}
+.point.sunny{
+    margin-top: 150px;
+    margin-left: -300px;
+}
+
+.active {
+    filter: brightness(130%);
+  }

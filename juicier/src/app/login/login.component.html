@@ -27,6 +27,13 @@
 
         </div>
 
+        <div class="error-holder" *ngIf = "isError">
+            <div class="error-div">
+                <h2>Uh Oh!</h2>
+                <p>Looks like you have entered the incorrect username or password!</p>
+                <button (click)="closeError()">Try Again</button>
+            </div>
+        </div>
 
 
 

@@ -18,24 +18,32 @@ export class LoginComponent {
 
   // 10 - Is our user verified
   isVerified: boolean = false;
-  // watch for changes to token in localStorage
+  isError: boolean = false;
 
   checkVerification(){
     this.verify.checkVerification(this.username.value!, this.favouriteBurger.value!).subscribe((response) =>{
       if(response.success){
         console.log("Verified Successfully");
         localStorage.setItem('token','xhja787');
+        sessionStorage.setItem('selectedLocation','Mystic Falls');
         this.isVerified = localStorage.getItem('token') !== null; // convert to boolean
         //redirect
-        this.router.navigate(['/landing'])
-         // Trigger change detection
-         this.cdRef.detectChanges();
-  
-      }else{
+        this.router.navigate(['/landing']);
+        // Trigger change detection
+        this.cdRef.detectChanges();
+        this.isError = false;  
+      } else {
         console.log("An error has occurred");        
-        console.log(response);        
+        console.log(response);   
+        this.isError = true;     
+        this.cdRef.detectChanges();
       }
     })
+  }
+
+  closeError() {
+    this.isError = false;
+    this.cdRef.detectChanges();
   }
   
 }

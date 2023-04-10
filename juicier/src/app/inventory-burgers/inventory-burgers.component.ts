@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Burger } from '../models/burger';
 import { CraftService } from '../services/craft.service';
 
+import {OnInit, ElementRef, ViewChild } from '@angular/core';
+
+
 @Component({
   selector: 'app-inventory-burgers',
   templateUrl: './inventory-burgers.component.html',
@@ -11,7 +14,7 @@ import { CraftService } from '../services/craft.service';
 export class InventoryBurgersComponent {
 
       //service
-      constructor(private craftService: CraftService){};
+      constructor(private craftService: CraftService, private elementRef: ElementRef){};
 
 
       //list of burgers variable
@@ -19,6 +22,8 @@ export class InventoryBurgersComponent {
 
         //preloader
         isCrafting = false;
+        
+
 
         getRecipes(){
           this.craftService.getAllBurgers().subscribe((data) => {
@@ -28,9 +33,9 @@ export class InventoryBurgersComponent {
           })
         }
       
-        ngOnInit(){
-          this.getRecipes()
-        }
+        // ngOnInit(){
+        //   this.getRecipes()
+        // }
 
         //pop up
         showPopup = false;
@@ -39,5 +44,30 @@ export class InventoryBurgersComponent {
           console.log(selectedBurger);
         }
 
+
+        //scroll
+        private carousel!: HTMLElement;
+        private arrowLeft!: HTMLElement;
+        private arrowRight!: HTMLElement;
+      
+        public scrollAmount = 510; // adjust as needed
+      
+
+      
+        ngOnInit() {
+          this.getRecipes()
+
+
+          this.carousel = this.elementRef.nativeElement.querySelector('.carousel-container');
+          this.arrowLeft = this.elementRef.nativeElement.querySelector('.arrow-left');
+          this.arrowRight = this.elementRef.nativeElement.querySelector('.arrow-right');
+        }
+      
+        public scroll(amount: number) {
+          this.carousel.scrollBy({
+            left: amount,
+            behavior: 'smooth'
+          });
+        }
 
 }

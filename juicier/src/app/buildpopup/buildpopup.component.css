@@ -1,5 +1,5 @@
 .popup{
-    width: 85%;
+    width: 87.5%;
     height: 430px;
     background-color: #FFF6F6;
     border-radius: 50px;
@@ -10,6 +10,7 @@
     position:absolute;
     z-index: 1000;
     margin-top:-500px; /* default y position */
+    margin-left: -30px;
 }
 
 .circle{
@@ -130,10 +131,10 @@ li span, li p,li div{
     border: none;
     border-radius: 20px;
     margin-left: 15px;
-    margin-bottom: 20px;
-    justify-content: flex-end;
+    font-size: 12px;
+    margin-bottom: 10px;
     float: right;
-
+    margin-right: 80px;
   }
 
   ul {
@@ -175,5 +176,6 @@ li span, li p,li div{
   
   .primary-btn.missing{
     background-color: #fca87754;
+    width: 240px;
   }
   
