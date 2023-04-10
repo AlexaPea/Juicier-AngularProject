@@ -56,14 +56,14 @@ h4{
 }
 
 input{
-    background-color: #FFD1D1;
+    background-color: #FFFFFF;
     border: none;
     padding: 10px;
     padding-left: 15px;
     border-radius: 15px;
     height: 50px;
     font-size: 18px;
-    color: white;
+    color: #FCA877;
     width: 140px;
     display: block;
     margin-bottom: 20px;
@@ -96,3 +96,7 @@ input{
     font-weight: 100;
     border: 1px solid #FCA877;
 }
+
+input:focus {
+    outline: none;
+    }

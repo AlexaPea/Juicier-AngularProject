@@ -69,7 +69,7 @@
               
             </form>
               </div>
-              <div class="created-holder"  [hidden]="!isCreated">
+              <div class="created-holder"  *ngIf="isCreated">
                 <!-- <div class="created-holder"> -->
                 <div class="created-div">
                     <h2>Whoopie!</h2>

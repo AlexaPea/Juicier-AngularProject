@@ -3,6 +3,7 @@ import { Burger } from '../models/burger';
 import { CraftService } from '../services/craft.service';
 import { filter } from 'rxjs/operators';
 import {OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,11 @@ import {OnInit, ElementRef, ViewChild } from '@angular/core';
 export class InventoryBurgersComponent {
 
       //service
-      constructor(private craftService: CraftService, private elementRef: ElementRef){};
+      constructor(
+        private craftService: CraftService,
+        private elementRef: ElementRef,
+        private router: Router
+        ){};
 
 
       //list of burgers variable
@@ -87,5 +92,9 @@ export class InventoryBurgersComponent {
         
         public scrollSpecial(amount: number) {
             this.scroll(amount, this.specialCarousel);
+        }
+
+        navigate() {
+          this.router.navigate(['/creationStation']);
         }
 }

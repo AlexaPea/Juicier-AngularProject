@@ -139,3 +139,27 @@ input{
     left: 0;
     background-color: #fea8a879;
 }
+
+input{
+    background-color: #FFF6F6;
+    border: none;
+    padding: 5px;
+    padding-left: 15px;
+    border-radius: 20px;
+    height: 50px;
+    font-size: 18px;
+    color: #B8D27A;
+    width: 65%;
+    display: block;
+    margin-bottom: 20px;
+    
+}
+
+::placeholder{
+    color: #b8d27a91;
+}
+
+input:focus {
+    outline: none;
+    }
+    

@@ -7,15 +7,14 @@
         </div>
 
         <div class="login-form">
-            <mat-form-field class="example-full-width">
-                <mat-label>Username</mat-label>
-                <input [formControl]="username" type="Text" matInput  placeholder="Username">
-            </mat-form-field>
+           
 
-            <mat-form-field class="example-full-width">
-              <mat-label>Favourite Burger</mat-label>
-              <input [formControl]="favouriteBurger"  type="text" matInput  placeholder="CheesySqueez">
-            </mat-form-field>
+                <input [formControl]="username" type="Text" matInput  placeholder="Username">
+           
+
+
+              <input [formControl]="favouriteBurger"  type="text" matInput  placeholder="What's you favourite burger?">
+ 
 
             <button (click)="checkVerification()">Login</button>
         </div>
