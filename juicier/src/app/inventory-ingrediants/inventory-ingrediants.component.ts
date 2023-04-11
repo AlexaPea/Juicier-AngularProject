@@ -42,9 +42,7 @@ export class InventoryIngrediantsComponent  implements OnInit{
     private sessionSub!: Subscription;
 
     ngOnInit() {
-
         // Retrieve the ingredients
-        this.ingrediantService.getAllItems();
         this.getIngredients();
         this.carousel = this.elementRef.nativeElement.querySelector('.carousel-container');
         this.arrowLeft = this.elementRef.nativeElement.querySelector('.arrow-left');
@@ -52,15 +50,14 @@ export class InventoryIngrediantsComponent  implements OnInit{
 
     };
      
-
     getIngredients() {
-      this.ingrediantService.items$.subscribe((items) => {
-        console.log(items);
-          this.breadIngrediants = items.filter(ingredient => ingredient.category === 'Bread');
-          this.pattyIngrediants = items.filter(ingredient => ingredient.category === 'Patty');
-          this.cheeseIngrediants = items.filter(ingredient => ingredient.category === 'Cheese');
-          this.garnishIngrediants = items.filter(ingredient => ingredient.category === 'Garnish');
-          this.sauceIngrediants = items.filter(ingredient => ingredient.category === 'Sauce');
+      this.ingrediantService.getAllItems().subscribe((data) => {
+          console.log(data);
+          this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
+          this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
+          this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
+          this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
+          this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
       });
   }
            

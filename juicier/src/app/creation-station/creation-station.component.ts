@@ -43,7 +43,7 @@ export class CreationStationComponent {
     this.isCreated = false;
     //READ using service
     //5 - update
-    this.ingrediantService.items$.subscribe((data) => {
+    this.ingrediantService.getAllItems().subscribe((data) => {
       console.log(data);
       this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
       this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
