@@ -15,7 +15,9 @@ export class AppComponent implements OnInit {
   selectedLocation: string = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
   ingredients: Ingrediant[] = [];
 
-  constructor(private ingrediantService: IngrediantService, private cdRef: ChangeDetectorRef) {}
+  constructor(private ingrediantService: IngrediantService, private cdRef: ChangeDetectorRef) {
+      this.ingrediantService.getAllItems();
+  }
 
   isVerified: boolean = false;
   breadIngrediants: Ingrediant[] =[];
@@ -29,23 +31,10 @@ export class AppComponent implements OnInit {
     this.isVerified = localStorage.getItem('token') ? true : false;
     console.log(this.selectedLocation);
     this.selectedLocation = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
-    // this.getIngredients()
   }
-
-// getIngredients() {
-//    this.ingrediantService.getAllItems().subscribe((data) => {
-//         console.log(data);
-//         this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
-//         this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
-//         this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
-//         this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
-//         this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
-//     });
-// }
 
 onLocationChange() {
   sessionStorage.setItem('selectedLocation', this.selectedLocation);
-  // this.getIngredients();
-
+  this.ingrediantService.getAllItems();
 }
 }
