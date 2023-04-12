@@ -1,0 +1,45 @@
+.unknown{
+    height:47vh;
+    background-color: #C5E9FD;
+    padding-top: 310px;
+}
+
+.conatinerUnkown{
+    text-align: center;
+    margin: 0 auto;
+
+}
+h1{
+    color: #6699B6;
+    font-family: "Maybe Coffee";
+    font-size: 250px;
+    margin: 0 auto;
+    /* margin-left: 20%; */
+}
+
+h2{
+    color: #6699B6;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+    line-height: 1.5;
+    margin-top: 80px;
+}
+
+button{
+    background-color: #FCA877;
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    font-family: 'Maybe Coffee';
+    border-radius: 15px;
+    margin-top: 15px;
+    width: 150px;
+    font-size: 16px;
+    margin: 0 auto;
+    /* margin-left: 25%; */
+    margin-top: 20px;
+}
