@@ -39,17 +39,17 @@ export class CreationStationComponent {
 
   isCreated: Boolean = false;
   ngOnInit() {
-
+    this.ingrediantService.getAllItems();
     this.isCreated = false;
     //READ using service
     //5 - update
-    this.ingrediantService.getAllItems().subscribe((data) => {
-      console.log(data);
-      this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
-      this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
-      this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
-      this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
-      this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
+    this.ingrediantService.items$.subscribe((items) => {
+      console.log(items);
+      this.breadIngrediants = items.filter(ingredient => ingredient.category === 'Bread');
+      this.pattyIngrediants = items.filter(ingredient => ingredient.category === 'Patty');
+      this.cheeseIngrediants = items.filter(ingredient => ingredient.category === 'Cheese');
+      this.garnishIngrediants = items.filter(ingredient => ingredient.category === 'Garnish');
+      this.sauceIngrediants = items.filter(ingredient => ingredient.category === 'Sauce');
     })
   }
 

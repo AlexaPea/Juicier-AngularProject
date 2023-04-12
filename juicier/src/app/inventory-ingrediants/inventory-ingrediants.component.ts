@@ -3,8 +3,9 @@ import { IngrediantService } from '../services/ingrediants.service';
 import { Ingrediant } from '../models/ingrediant';
 import {ElementRef } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
-import { OnInit } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { OnInit, OnDestroy } from '@angular/core';
+import { Subject, Subscription, takeUntil, Observable, of, finalize, take } from 'rxjs';
+import { BaseComponent } from '../_shared/abstract/component.base';
 
 
 
@@ -14,16 +15,19 @@ import { Subject, Subscription } from 'rxjs';
   styleUrls: ['./inventory-ingrediants.component.css'],
   providers: [IngrediantService]
 })
-export class InventoryIngrediantsComponent  implements OnInit{
+export class InventoryIngrediantsComponent extends BaseComponent implements OnInit, OnDestroy{
 
     //service
     constructor(
       private ingrediantService: IngrediantService, 
       private elementRef: ElementRef, 
-      private cdr: ChangeDetectorRef) { }
+      private cdr: ChangeDetectorRef
+      ) { 
+        super();
+      }
 
     //simulate CRUD functionality
-    breadIngrediants: Ingrediant[] =[];
+    breadIngrediants$: Observable<Ingrediant[]> = new Observable<Ingrediant[]>;
     pattyIngrediants: Ingrediant[] =[];
     cheeseIngrediants: Ingrediant[] =[];
     garnishIngrediants: Ingrediant[] =[];
@@ -39,27 +43,33 @@ export class InventoryIngrediantsComponent  implements OnInit{
     private arrowRight!: HTMLElement;
     public scrollAmount = 510; // adjust as needed
 
-    private sessionSub!: Subscription;
 
     ngOnInit() {
         // Retrieve the ingredients
-        this.getIngredients();
+        this.initializeIngrediants();
+        this.initializeIngredientListener();
+
         this.carousel = this.elementRef.nativeElement.querySelector('.carousel-container');
         this.arrowLeft = this.elementRef.nativeElement.querySelector('.arrow-left');
         this.arrowRight = this.elementRef.nativeElement.querySelector('.arrow-right');
-
     };
+
+    ngOnDestroy(): void {
+      this.unsubscribe();
+    }
      
-    getIngredients() {
-      this.ingrediantService.getAllItems().subscribe((data) => {
-          console.log(data);
-          this.breadIngrediants = data.filter(ingredient => ingredient.category === 'Bread');
-          this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
-          this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
-          this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
-          this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
+    async initializeIngrediants() {
+      this.ingrediantService.getAllItems().then((ingredients) => {ingredients.pipe(take(1), finalize(() => {})).subscribe((items) => {
+        this.ingrediantService.items$.next(items);
+          console.log("Items from service", items);
+          this.breadIngrediants$ = of(items.filter(ingredient => ingredient.category === 'Bread'));
+          // this.pattyIngrediants = items.filter(ingredient => ingredient.category === 'Patty');
+          // this.cheeseIngrediants = items.filter(ingredient => ingredient.category === 'Cheese');
+          // this.garnishIngrediants = items.filter(ingredient => ingredient.category === 'Garnish');
+          // this.sauceIngrediants = items.filter(ingredient => ingredient.category === 'Sauce');
+        
       });
-  }
+    })};
            
 
 public scroll(amount: number) {
@@ -67,6 +77,22 @@ public scroll(amount: number) {
     left: amount,
     behavior: 'smooth'
   });
+}
+
+initializeIngredientListener(){
+  console.log("1");
+  
+  this.ingrediantService.items$.pipe(
+    takeUntil(this.destroy$)
+  ).subscribe((data: Ingrediant[]) => {
+    console.log(2);
+    
+    this.breadIngrediants$ = of(data.filter(ingredient => ingredient.category === 'Bread'));
+    // this.pattyIngrediants = data.filter(ingredient => ingredient.category === 'Patty');
+    // this.cheeseIngrediants = data.filter(ingredient => ingredient.category === 'Cheese');
+    // this.garnishIngrediants = data.filter(ingredient => ingredient.category === 'Garnish');
+    // this.sauceIngrediants = data.filter(ingredient => ingredient.category === 'Sauce');
+  })
 }
 
 }

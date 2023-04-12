@@ -20,7 +20,6 @@ export class CraftService {
   getAllBurgers(): Observable<Burger[]>{
     return this.http.get<Burger[]>(this.url).pipe(
       map(burgers => burgers.filter(burger => burger.location === this.selectedLocation))   
-
     );
   }
 

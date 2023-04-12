@@ -69,7 +69,7 @@ export class InventoryBurgersComponent {
 
       
         ngOnInit() {
-          this.getRecipes()
+          this.getRecipes();
 
           this.menuCarousel = this.elementRef.nativeElement.querySelector('.menu-carousel');
           this.specialCarousel = this.elementRef.nativeElement.querySelector('.special-carousel');

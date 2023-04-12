@@ -21,7 +21,7 @@
             <div class="carousel">
                 <img src="../../assets/arrows/left-arrow.png" class="arrow-left" (click)="scroll(-scrollAmount)">
                 <img  src="../../assets/arrows/right-arrow.png" class="arrow-right" (click)="scroll(scrollAmount)">
-                <div class="card" *ngFor="let breadIngrediants of breadIngrediants; let i=index" >
+                <div class="card" *ngFor="let breadIngrediants of (breadIngrediants$ | async)" >
                     <div class="top-circle">
                         <h4>{{breadIngrediants.amount}}</h4>
                     </div>

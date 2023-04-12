@@ -20,11 +20,11 @@ export class AppComponent implements OnInit {
   }
 
   isVerified: boolean = false;
-  breadIngrediants: Ingrediant[] =[];
-  pattyIngrediants: Ingrediant[] =[];
-  cheeseIngrediants: Ingrediant[] =[];
-  garnishIngrediants: Ingrediant[] =[];
-  sauceIngrediants: Ingrediant[] =[];
+  // breadIngrediants: Ingrediant[] =[];
+  // pattyIngrediants: Ingrediant[] =[];
+  // cheeseIngrediants: Ingrediant[] =[];
+  // garnishIngrediants: Ingrediant[] =[];
+  // sauceIngrediants: Ingrediant[] =[];
 
 
   ngOnInit() {
