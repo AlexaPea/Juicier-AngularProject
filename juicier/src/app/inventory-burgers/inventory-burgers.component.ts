@@ -109,4 +109,10 @@ export class InventoryBurgersComponent {
           this.craftService.getAllBurgers();
           
         }
+
+        onBurgerCreated() {
+          this.craftService.getAllBurgers(); // refresh the list of burgers
+          console.log("works");
+          
+        }
 }

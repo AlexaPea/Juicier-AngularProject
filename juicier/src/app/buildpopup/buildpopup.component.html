@@ -19,7 +19,7 @@
       </ul>
     
       <div class="btn-container">
-        <button class="primary-btn" (click)="craftBurger(selectedBurger._id!); closePopup()" [disabled]="isCrafting" *ngIf="selectedBurger.craftable">Build</button>
+        <button class="primary-btn" (click)="craftBurger(selectedBurger._id!)" [disabled]="isCrafting" *ngIf="selectedBurger.craftable">Build</button>
         <button class="primary-btn missing" *ngIf="!selectedBurger.craftable">Missing Ingredients!</button>
         <button class="secondary-btn"  (click)="closePopup()" >Cancel</button>
       </div>

@@ -28,7 +28,10 @@ export class LoginComponent {
         sessionStorage.setItem('selectedLocation','Mystic Falls');
         this.isVerified = localStorage.getItem('token') !== null; // convert to boolean
         //redirect
-        this.router.navigate(['/landing']);
+        this.router.navigate(['/landing'])
+        .then(() => {
+          window.location.reload();
+        });
         // Trigger change detection
         this.cdRef.detectChanges();
         this.isError = false;  

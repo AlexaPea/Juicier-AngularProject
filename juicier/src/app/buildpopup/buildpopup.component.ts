@@ -56,20 +56,28 @@ export class BuildpopupComponent {
       }
     }
     
+
+
     
-    
+    @Output() burgerCreated = new EventEmitter<boolean>();
+
   //build burger
     craftBurger(burgerId: string){
 
       this.isCrafting=true;//preloader
 
       this.craftService.craftBurger(burgerId).subscribe((response) => {
-        this.isCrafting=false;//preloader
-        if(response.success){
+        this.isCrafting = false;
+        if (response.success) {
           this.getBurgers();
+          const updatedBurger = this.listOfBurgers.find(burger => burger._id === burgerId);
+          this.burgerCreated.emit(true); // emit the event
+          this.close.emit();
         }
-      })
+      });
+      
     }
+
  
  //close pop up
  closePopup(): void {

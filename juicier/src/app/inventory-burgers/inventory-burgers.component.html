@@ -40,7 +40,7 @@
               </div>
           </div>
       </div>
-      <app-buildpopup *ngIf="showPopup" [selectedBurger]="selectedBurger" (close)="showPopup = false"></app-buildpopup>
+      <app-buildpopup *ngIf="showPopup" [selectedBurger]="selectedBurger" (close)="showPopup = false" (burgerCreated)="onBurgerCreated()"></app-buildpopup>
       <div class="burger-slider two">
           <hr/>
           <h4 class="burger-heading">Special Creations</h4>
