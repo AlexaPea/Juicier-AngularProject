@@ -60,13 +60,16 @@ detectAmountChange(e: any){
 }
 
 
- updateAmount(id: string){
-  this.ingrediantService.updateAmount(id, this.newAmountPlaceholder).subscribe((selectedIngrediant) => {
-    console.log(selectedIngrediant.amount);
+@Output() updated: EventEmitter<void> = new EventEmitter<void>();
 
+
+updateAmount(id: string) {
+  this.ingrediantService.updateAmount(id, this.newAmountPlaceholder).subscribe((selectedIngrediant) => {
+  console.log(selectedIngrediant.amount);
+  this.updated.emit(); // emit the event when the update is successful
+  this.close.emit(); // emit the event to close the modal
   });
-  
- }
+  }
 
  //close pop up
  closePopup(): void {

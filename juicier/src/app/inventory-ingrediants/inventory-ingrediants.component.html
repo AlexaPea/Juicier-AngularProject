@@ -40,7 +40,8 @@
             </div>
         </div>
 
-        <app-popup *ngIf="showPopup" [selectedIngrediants]="selectedIngrediants" (close)="showPopup = false"></app-popup>
+        <app-popup *ngIf="showPopup" [selectedIngrediants]="selectedIngrediants" (close)="showPopup = false" (updated)="onUpdate()"></app-popup>
+
      
 
 

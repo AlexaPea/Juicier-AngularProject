@@ -49,19 +49,21 @@ export class InventoryIngrediantsComponent  implements OnInit{
         this.carousel = this.elementRef.nativeElement.querySelector('.carousel-container');
         this.arrowLeft = this.elementRef.nativeElement.querySelector('.arrow-left');
         this.arrowRight = this.elementRef.nativeElement.querySelector('.arrow-right');
-
+       
     };
      
 
     getIngredients() {
       this.ingrediantService.items$.subscribe((items) => {
         console.log(items);
+        this.cdr.detectChanges();
           this.breadIngrediants = items.filter(ingredient => ingredient.category === 'Bread');
           this.pattyIngrediants = items.filter(ingredient => ingredient.category === 'Patty');
           this.cheeseIngrediants = items.filter(ingredient => ingredient.category === 'Cheese');
           this.garnishIngrediants = items.filter(ingredient => ingredient.category === 'Garnish');
           this.sauceIngrediants = items.filter(ingredient => ingredient.category === 'Sauce');
       });
+      this.cdr.detectChanges();
   }
            
 
@@ -79,5 +81,15 @@ onLocationChange() {
   
 }
 
+
+
+// add this method to update the ingredient list when the event is emitted
+onUpdate() {
+  // re-fetch the ingredient data and update the local variable
+  console.log("On Update runs");
+  
+  this.ingrediantService.getAllItems();
+  this.getIngredients();
+}
 }
 

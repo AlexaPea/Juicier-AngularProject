@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class IngrediantService {
 
-  items$: BehaviorSubject<Ingrediant[]> = new BehaviorSubject<Ingrediant[]>([]); // initialize the property
+  
 
   constructor(private http:HttpClient) { 
 
@@ -23,6 +23,8 @@ export class IngrediantService {
   selectedLocation: string = sessionStorage.getItem('selectedLocation') ?? '';
   
 
+  items$: BehaviorSubject<Ingrediant[]> = new BehaviorSubject<Ingrediant[]>([]); // initialize the property
+  
   //Get All Items
   getAllItems(): void {
     const selectedLocation = sessionStorage.getItem('selectedLocation') ?? '';
@@ -34,6 +36,15 @@ export class IngrediantService {
    )).subscribe((res) => this.items$.next(res));
 }
 
+  //UPDATE
+  updateAmount(id: string, newAmount: number): Observable<Ingrediant>{
+    return this.http.put<Ingrediant>(`${this.url}/${id}`, {amount: newAmount});
+  }
+
+
+  // updateAmount(id: string, newAmount: number): Observable<Ingrediant>{
+  //   return this.http.put<Ingrediant>(`${this.url}/${id}`, {amount: newAmount});
+  // }
 
   locationGetItems(): Observable<Ingrediant[]> {
     return this.http.get<Ingrediant[]>(this.url);
@@ -48,11 +59,6 @@ export class IngrediantService {
   removeItem(id: string): Observable<unknown>{
     return this.http.delete(`${this.url}/${id}`);
     // this.items.splice(index,1);
-  }
-
-  //UPDATE
-  updateAmount(id: string, newAmount: number): Observable<Ingrediant>{
-    return this.http.put<Ingrediant>(`${this.url}/${id}`, {amount: newAmount});
   }
   
   // Method to update the items in the BehaviorSubject
