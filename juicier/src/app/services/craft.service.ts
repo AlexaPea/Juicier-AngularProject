@@ -3,13 +3,16 @@ import { HttpClient } from '@angular/common/http';
 import { Burger } from '../models/burger';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CraftService {
 
-  constructor(private http: HttpClient){ }
+  burgers$: BehaviorSubject<Burger[]> = new BehaviorSubject<Burger[]>([]); // initialize the property
+
+  constructor(private http: HttpClient){}
 
   url = "http://localhost:3000/burgers";
 
@@ -17,11 +20,34 @@ export class CraftService {
   burgers: Burger[] = [];
 
   //function to get all the burgers
-  getAllBurgers(): Observable<Burger[]>{
-    return this.http.get<Burger[]>(this.url).pipe(
-      map(burgers => burgers.filter(burger => burger.location === this.selectedLocation))   
+  // getAllBurgers(): Observable<Burger[]>{
+  //   return this.http.get<Burger[]>(this.url).pipe(
+  //     map(burgers => burgers.filter(burger => burger.location === this.selectedLocation))   
 
-    );
+  //   );
+  // }
+
+    //Get All Items
+  //   getAllItems(): void {
+  //     const selectedLocation = sessionStorage.getItem('selectedLocation') ?? '';
+  
+  //    this.http.get<Ingrediant[]>(this.url).pipe(
+  //        map(ingredients => ingredients.filter(
+  //            ingredient => ingredient.location === selectedLocation
+  //        )
+  //    )).subscribe((res) => this.items$.next(res));
+  // }
+
+  
+    //Get All Items
+    getAllBurgers(): void {
+      const selectedLocation = sessionStorage.getItem('selectedLocation') ?? '';
+  
+     this.http.get<Burger[]>(this.url).pipe(
+         map(burgerItems => burgerItems.filter(
+          burgers => burgers.location === selectedLocation
+         )
+     )).subscribe((res) => this. burgers$.next(res));
   }
 
   //method to craft a burger

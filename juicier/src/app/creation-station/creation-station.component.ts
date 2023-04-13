@@ -41,6 +41,7 @@ export class CreationStationComponent {
   ngOnInit() {
 
     this.isCreated = false;
+    this.ingrediantService.getAllItems();
     //READ using service
     //5 - update
     this.ingrediantService.items$.subscribe((data) => {
@@ -154,6 +155,13 @@ createBurger() {
   this.cdRef.detectChanges();
 }
 
+selectedLocation: string = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
+
+onLocationChange() {
+  sessionStorage.setItem('selectedLocation', this.selectedLocation);
+  this.craftService.getAllBurgers();
+  
+}
 
   
 }

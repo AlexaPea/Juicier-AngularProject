@@ -19,7 +19,7 @@ export class CraftModalComponent {
 
 
   getBurgers(){
-    this.craft.getAllBurgers().subscribe((data) => {
+    this.craft.burgers$.subscribe((data) => {
       this.listOfBurgers = data;
       console.log(data);
       

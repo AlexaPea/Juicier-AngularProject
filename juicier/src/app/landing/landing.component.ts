@@ -27,13 +27,13 @@ export class LandingComponent {
      
 
 
-        getRecipes(){
-          this.craftService.getAllBurgers().subscribe((data) => {
-            this.listOfBurgers = data;
-            console.log(data);
-            
-          })
-        }
+      getRecipes(){
+        this.craftService.burgers$.subscribe((data) => {
+          this.listOfBurgers = data;
+          console.log(data);
+          
+        })
+      }
 
       //scroll
       private carousel!: HTMLElement;
@@ -46,7 +46,7 @@ export class LandingComponent {
     
       ngOnInit() {
         this.getRecipes()
-
+        this.craftService.getAllBurgers();
 
         this.carousel = this.elementRef.nativeElement.querySelector('.carousel-container');
         this.arrowLeft = this.elementRef.nativeElement.querySelector('.arrow-left');
@@ -63,5 +63,14 @@ export class LandingComponent {
       navigate() {
         this.router.navigate(['/inventoryBurgers']);
       }
+
+      selectedLocation: string = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
+
+    onLocationChange() {
+      sessionStorage.setItem('selectedLocation', this.selectedLocation);
+      this.craftService.getAllBurgers();
+      
+    }
+
       
 }

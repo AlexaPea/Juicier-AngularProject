@@ -36,7 +36,7 @@ export class BuildpopupComponent {
     // listOfIngrediants: Burger[] =[];
 
     getBurgers(){
-      this.craftService.getAllBurgers().subscribe((data) => {
+      this.craftService.burgers$.subscribe((data) => {
         this.listOfBurgers = data;
         console.log(data);
         

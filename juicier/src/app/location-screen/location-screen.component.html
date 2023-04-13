@@ -11,6 +11,14 @@
             <img src="../../assets/Images/location.png" class="header-img"/>
 
         </div>
+
+        <select id="locations" [(ngModel)]="selectedLocation"  (change)="onLocationChange()">
+          <option value="Mystic Falls">Mystic Falls</option>
+          <option value="Riverdale">Riverdale</option>
+          <option value="Sunnydale">Sunnydale</option>
+        </select>
+
+        
         <div class="locations">
             <img src="../../assets/map/map.png" class="map-img"/>
             <img class="point myst" src="../../assets/map/location1.png" (click)="selectImage(1, 'Mystic Falls')" [class.active]="selectedImage1 === 'Mystic Falls'" />

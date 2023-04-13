@@ -15,6 +15,13 @@
             <p>Click on the different elements to see all the available options. Keep clicking until you've created your personal masterpiece.</p>
         </div>
 
+        
+        <select id="locations" [(ngModel)]="selectedLocation"  (change)="onLocationChange()">
+            <option value="Mystic Falls">Mystic Falls</option>
+            <option value="Riverdale">Riverdale</option>
+            <option value="Sunnydale">Sunnydale</option>
+          </select>
+
         <div class="creation-station">
        
 

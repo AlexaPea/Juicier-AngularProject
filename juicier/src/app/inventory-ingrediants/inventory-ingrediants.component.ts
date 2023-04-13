@@ -71,6 +71,13 @@ public scroll(amount: number) {
     behavior: 'smooth'
   });
 }
+selectedLocation: string = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
+
+onLocationChange() {
+  sessionStorage.setItem('selectedLocation', this.selectedLocation);
+  this.ingrediantService.getAllItems();
+  
+}
 
 }
 

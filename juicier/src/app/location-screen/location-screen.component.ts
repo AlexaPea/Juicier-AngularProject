@@ -97,6 +97,13 @@ getIngredients() {
 isLow(amount: number): boolean {
   return amount <= 10;
 }
+
+selectedLocationMain: string = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
+
+onLocationChange() {
+  sessionStorage.setItem('selectedLocation', this.selectedLocationMain);  
+}
+
   
 
 }

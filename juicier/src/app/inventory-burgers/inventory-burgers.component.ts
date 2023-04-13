@@ -19,7 +19,9 @@ export class InventoryBurgersComponent {
         private craftService: CraftService,
         private elementRef: ElementRef,
         private router: Router
-        ){};
+        ){
+          this.craftService.getAllBurgers();
+        };
 
 
       //list of burgers variable
@@ -33,7 +35,7 @@ export class InventoryBurgersComponent {
 
 
         getRecipes(){
-          this.craftService.getAllBurgers().subscribe((data) => {
+          this.craftService.burgers$.subscribe((data) => {
             this.listOfBurgers = data;
             console.log(data);
             
@@ -69,7 +71,8 @@ export class InventoryBurgersComponent {
 
       
         ngOnInit() {
-          this.getRecipes()
+          this.craftService.getAllBurgers();
+          this. getRecipes();
 
           this.menuCarousel = this.elementRef.nativeElement.querySelector('.menu-carousel');
           this.specialCarousel = this.elementRef.nativeElement.querySelector('.special-carousel');
@@ -96,5 +99,14 @@ export class InventoryBurgersComponent {
 
         navigate() {
           this.router.navigate(['/creationStation']);
+        }
+
+
+        selectedLocation: string = sessionStorage.getItem('selectedLocation') || 'Mystic Falls';
+
+        onLocationChange() {
+          sessionStorage.setItem('selectedLocation', this.selectedLocation);
+          this.craftService.getAllBurgers();
+          
         }
 }

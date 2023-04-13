@@ -36,5 +36,6 @@ export class AppComponent implements OnInit {
 onLocationChange() {
   sessionStorage.setItem('selectedLocation', this.selectedLocation);
   this.ingrediantService.getAllItems();
+  
 }
 }

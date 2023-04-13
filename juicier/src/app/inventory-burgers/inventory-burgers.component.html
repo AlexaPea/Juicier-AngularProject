@@ -8,6 +8,13 @@
         </div>
 
 
+        <select id="locations" [(ngModel)]="selectedLocation"  (change)="onLocationChange()">
+          <option value="Mystic Falls">Mystic Falls</option>
+          <option value="Riverdale">Riverdale</option>
+          <option value="Sunnydale">Sunnydale</option>
+        </select>
+
+
         <div class="header-image">
             <img src="../../assets/Images/bInventoryBurger.png" class="header-img"/>
         </div>
