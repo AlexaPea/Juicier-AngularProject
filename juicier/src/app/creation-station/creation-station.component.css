@@ -115,19 +115,21 @@ button{
 .right-pannel{
     width: 40%;
     float: left;
+    margin-left: 90px;
    }
 .circle{
-    height: 450px;
-    width: 450px;
-    border-radius: 400px;
+    height: 650px;
+    width: 650px;
+    border-radius: 500px;
     background-color: #fff;
-    margin-top: 50px;
-    margin-left: 30px;
+    margin-top: -40px;
+    margin-left: -50px;
 }
 
 .circle img{
-    width: 415px;
-    margin-left: 15px;
+    width: 325px;
+    margin-left: 160px;
+    /* margin-top: 50px; */
 }
 .ingrediant{
     width: 70%;
@@ -305,5 +307,74 @@ outline: none;
     color: #FCA877;
     border: none;
     box-shadow: none;
+  }
+  
+
+  
+
+  .left-pannel {
+    position: relative;
+    height: 300px; /* Adjust the height as per your requirements */
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 50;
+}
+
+
+.ingredientContainerBread img{
+    position: absolute;
+    margin-top: 30px;
+    margin-bottom: -35;
+
+}
+.ingredient-containerTwo {
+    position: relative;
+    opacity: 1; /* Adjust the opacity to make the inactive ingredients less prominent */
+
+    cursor: pointer;
+    margin-top: -40;
+    margin-bottom: 0;
+}
+
+
+.ingredient-container img {
+    width: 200px;
+    z-index: 1;
+}
+
+.ingredient-container.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.burger{
+    margin-top: 200px;
+    margin-left: 220px;
+  
+}
+.inner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 170px;
+    /* margin-left: 100px; */
+  }
+  
+
+
+  .left-pannel {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+  }
+  
+  .ingredientContainerInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   

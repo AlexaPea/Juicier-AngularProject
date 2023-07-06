@@ -24,12 +24,38 @@
 
         <div class="creation-station">
        
-
             <div class="left-pannel">
                 <div class="circle">
-                  <img *ngIf="selectedIngredient" [src]="selectedIngredient.image">
+                  <div class="ingredientContainerBread" *ngIf="selectedBreadIngredient">
+                    <img [src]="selectedBreadIngredient.image">
+                  </div>
+
+                  <div class="inner">
+   
+                    <div class="ingredientContainerInner" *ngIf="selectedTomatoIngredient">
+                        <img [src]="selectedTomatoIngredient.image ">
+                      </div>
+                      <div class="ingredientContainerInner" *ngIf="selectedLettuceIngredient">
+                        <img [src]="selectedLettuceIngredient.image">
+                      </div>
+                    <div class="ingredientContainerInner" *ngIf="selectedSauceIngredient">
+                      <img [src]="selectedSauceIngredient.image">
+                    </div>
+                    <div class="ingredientContainerInner" *ngIf="selectedPattyIngredient">
+                      <img [src]="selectedPattyIngredient.image">
+                    </div>
+                    <div class="ingredientContainerInner" *ngIf="selectedCheeseIngredient">
+                        <img [src]="selectedCheeseIngredient.image">
+                      </div>
+                    <div class="ingredientContainerInner" *ngIf="selectedOnionIngredient">
+                        <img [src]="selectedOnionIngredient.image">
+                      </div>
+
+                  </div>
                 </div>
               </div>
+              
+         
               
               <div class="right-pannel">
                 <h1>CREATE</h1>

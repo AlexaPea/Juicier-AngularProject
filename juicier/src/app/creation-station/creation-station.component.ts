@@ -23,19 +23,29 @@ export class CreationStationComponent {
     private router: Router
     ){};
 
+    selectedIngredients: Ingrediant[] = [];
+
+
   //define
   breadIngrediants: Ingrediant[] =[];
   pattyIngrediants: Ingrediant[] =[];
   cheeseIngrediants: Ingrediant[] =[];
   garnishIngrediants: Ingrediant[] =[];
   sauceIngrediants: Ingrediant[] =[];
-  selectedBreadIngredient!: Ingrediant;
   selectedIngredient!: Ingrediant;
-  selectedPattyIngredient!: Ingrediant;
-  selectedCheeseIngredient!: Ingrediant;
   selectedGarnishIngredient!: Ingrediant;
-  selectedSauceIngredient!: Ingrediant;
   burgers: Burger[] =[]
+
+
+  selectedBreadIngredient: Ingrediant | null = null;
+  selectedTomatoIngredient: Ingrediant | null = null;
+  selectedLettuceIngredient: Ingrediant | null = null;
+  selectedSauceIngredient: Ingrediant | null = null;
+  selectedPattyIngredient: Ingrediant | null = this.pattyIngrediants[0] || null;
+  selectedCheeseIngredient: Ingrediant | null = null;
+  selectedOnionIngredient: Ingrediant | null = null;
+  
+
 
   isCreated: Boolean = false;
   ngOnInit() {
@@ -56,45 +66,46 @@ export class CreationStationComponent {
 
   garnishStatus: boolean[] = [false, false, false, false, false];
 
-toggleGarnish(index: number) {
-  this.garnishStatus[index] = !this.garnishStatus[index];
-  this.selectedIngredient = this.garnishIngrediants[index];
-}
+  
   currentIndex = [0, 0, 0, 0, 0];
-
   onIngredientClick(index: number) {
     switch (index) {
       case 0:
         this.currentIndex[0] = (this.currentIndex[0] + 1) % this.breadIngrediants.length;
         this.selectedBreadIngredient = this.breadIngrediants[this.currentIndex[0]];
-        console.log(this.breadIngrediants[this.currentIndex[0]]._id);
-        
-        this.selectedIngredient = this.breadIngrediants[this.currentIndex[0]];
         break;
       case 1:
         this.currentIndex[1] = (this.currentIndex[1] + 1) % this.pattyIngrediants.length;
         this.selectedPattyIngredient = this.pattyIngrediants[this.currentIndex[1]];
-        this.selectedIngredient = this.pattyIngrediants[this.currentIndex[1]];
         break;
       case 2:
         this.currentIndex[2] = (this.currentIndex[2] + 1) % this.cheeseIngrediants.length;
         this.selectedCheeseIngredient = this.cheeseIngrediants[this.currentIndex[2]];
-        this.selectedIngredient = this.cheeseIngrediants[this.currentIndex[2]];
         break;
       case 3:
-        this.currentIndex[3] = (this.currentIndex[3] + 1) % this.garnishIngrediants.length;
-        this.selectedGarnishIngredient = this.garnishIngrediants[this.currentIndex[3]];
-        this.selectedIngredient = this.garnishIngrediants[this.currentIndex[3]];
-        break;
+          this.currentIndex[3] = (this.currentIndex[3] + 1) % this.garnishIngrediants.length;
+          this.selectedGarnishIngredient = this.garnishIngrediants[this.currentIndex[3]];
+          this.updateGarnishIngredients();
+          break;
       case 4:
         this.currentIndex[4] = (this.currentIndex[4] + 1) % this.sauceIngrediants.length;
         this.selectedSauceIngredient = this.sauceIngrediants[this.currentIndex[4]];
-        this.selectedIngredient = this.sauceIngrediants[this.currentIndex[4]];
-        break;
-      default:
         break;
     }
   }
+  
+  toggleGarnish(index: number) {
+    this.garnishStatus[index] = !this.garnishStatus[index];
+    this.updateGarnishIngredients();
+  }
+  
+updateGarnishIngredients() {
+  this.selectedOnionIngredient = this.garnishStatus[0] ? this.garnishIngrediants.find(ingredient => ingredient.name.toLowerCase() === 'lettuce') || null : null;
+  this.selectedTomatoIngredient = this.garnishStatus[1] ? this.garnishIngrediants.find(ingredient => ingredient.name.toLowerCase() === 'onions') || null : null;
+  this.selectedLettuceIngredient = this.garnishStatus[2] ? this.garnishIngrediants.find(ingredient => ingredient.name.toLowerCase() === 'tomatoes') || null : null;
+}
+  
+
 
   newBurger =new FormGroup({
     name: new FormControl('', {validators: Validators.required, nonNullable: true}),

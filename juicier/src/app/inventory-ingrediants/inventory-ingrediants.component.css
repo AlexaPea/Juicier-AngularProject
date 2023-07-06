@@ -120,14 +120,44 @@ button{
     border-radius: 150px;
     background-color: #ffffff;
     margin: 0 auto;
+   
     /* margin-top: 90px; */
 
 }
-
-.circle img{
-    height: 180px;
+.circleBread{
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    background-color: #ffffff;
     margin: 0 auto;
 }
+.circleSauce{
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.circle img{
+    width: 200px;
+    margin: 0 auto;
+    padding-top: 80px
+}
+
+.circleBread img{
+    width: 200px;
+    margin: 0 auto;
+    padding-top: 80px;
+    margin-top: -50px
+}
+.circleSauce img{
+    width: 200px;
+    margin: 0 auto;
+    padding-top: 80px;
+    margin-top: -50px
+}
+
 
 .card h4{
     font-size: 28px;

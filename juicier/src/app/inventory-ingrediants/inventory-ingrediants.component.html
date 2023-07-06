@@ -30,8 +30,8 @@
                     <div class="top-circle">
                         <h4>{{breadIngrediants.amount}}</h4>
                     </div>
-                    <div class="circle">
-                        <img [src]="breadIngrediants.image" class="card-img" alt="Image of burger"/>
+                    <div class="circleBread">
+                        <img [src]="breadIngrediants.image.replace('.png', '') + 'display.png'" class="card-imgBread" alt="Image of burger" />
                     </div>
                     <h3>{{breadIngrediants.name}}</h3>
                     <button (click)="showPopup = true; selectedIngrediants = breadIngrediants">Update</button>
@@ -121,8 +121,8 @@
                     <div class="top-circle">
                         <h4>{{sauceIngrediants.amount}}</h4>
                     </div>
-                    <div class="circle">
-                        <img [src]="sauceIngrediants.image" class="card-img"/>
+                    <div class="circleSauce">
+                        <img [src]="sauceIngrediants.image.replace('.png', '') + 'display.png'" class="card-img" alt="Image of sauce" />
                     </div>
                     <h3>{{sauceIngrediants.name}}</h3>
                     <button (click)="showPopup = true; selectedIngrediants = sauceIngrediants">Update</button>
