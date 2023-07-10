@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IngrediantService } from '../services/ingrediants.service';
-import {Output, EventEmitter, HostListener  } from '@angular/core';
+import {Output, EventEmitter, HostListener, SimpleChanges   } from '@angular/core';
 
 @Component({
   selector: 'app-popup',
@@ -10,6 +10,7 @@ import {Output, EventEmitter, HostListener  } from '@angular/core';
 })
 export class PopupComponent {
 
+  circleStyle: string = ''; 
   @Input() selectedIngrediants: any;
   @Output() close: EventEmitter<void> = new EventEmitter<void>();
 
@@ -48,6 +49,29 @@ export class PopupComponent {
     }
   }
 
+  setCircleStyle(): void {
+    switch (this.selectedIngrediants.category) {
+      case 'Bread':
+        this.circleStyle = 'circle-style-bread';
+        break;
+      case 'Patty':
+        this.circleStyle = 'circle-style-patty';
+        break;
+      case 'Cheese':
+        this.circleStyle = 'circle-style-cheese';
+        break;
+      case 'Garnish':
+        this.circleStyle = 'circle-style-garnish';
+        break;
+      case 'Sauce':
+        this.circleStyle = 'circle-style-sauce';
+        break;
+      default:
+        this.circleStyle = ''; // Default style
+        break;
+    }
+  }
+
   //service
   constructor(private ingrediantService: IngrediantService){};
   //UPDATE
@@ -74,5 +98,11 @@ updateAmount(id: string) {
  //close pop up
  closePopup(): void {
   this.close.emit();
+}
+
+ngOnChanges(changes: SimpleChanges): void {
+  if (changes['selectedIngrediants']) {
+    this.setCircleStyle();
+  }
 }
 }

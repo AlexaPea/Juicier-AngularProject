@@ -1,8 +1,8 @@
 <div class="popup"[style.top.px]="getYPosition(selectedIngrediants)">
     <div class="left-pannel">
-        <div class="circle">
-            <img [src]="selectedIngrediants.image" class="card-img" alt="Image of burger"/>
-        </div>
+        <div class="circle" [class]="circleStyle">
+            <img [src]="selectedIngrediants.image.replace('.png', '') + 'display.png'" class="card-img" a />
+          </div>
     </div>
     <div class="right-pannel">
         
