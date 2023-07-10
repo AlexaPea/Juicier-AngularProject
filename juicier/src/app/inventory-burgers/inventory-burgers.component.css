@@ -122,6 +122,8 @@ button{
 .circle img{
     height: 180px;
     margin: 0 auto;
+    margin-top: 15px;
+    margin-left: -5px;
 }
 
 .card h4{

@@ -124,7 +124,7 @@ button{
     /* margin-top: 90px; */
 
 }
-.circleBread{
+.circleBread, .circleCheese, .circlePatty, .circleGarnish{
     width: 200px;
     height: 200px;
     border-radius: 150px;
@@ -146,16 +146,35 @@ button{
 }
 
 .circleBread img{
-    width: 200px;
+    width: 190px;
     margin: 0 auto;
     padding-top: 80px;
-    margin-top: -50px
+    margin-top: -35px;
+    margin-left: -15px;
 }
 .circleSauce img{
     width: 200px;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 70px;
     margin-top: -50px
+}
+.circleCheese img{
+    width: 170px;
+    margin: 0 auto;
+    padding-top: 80px;
+    margin-top: -30px
+}
+.circleGarnish img{
+    width: 160px;
+    margin: 0 auto;
+    padding-top: 45px;
+    margin-top: -30px
+}
+.circlePatty img{
+    width: 180px;
+    margin: 0 auto;
+    padding-top: 80px;
+    margin-top: -30px
 }
 
 

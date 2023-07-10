@@ -56,8 +56,8 @@
                         <div class="top-circle">
                             <h4>{{pattyIngrediants.amount}}</h4>
                         </div>
-                        <div class="circle">
-                            <img [src]="pattyIngrediants.image" class="card-img"/>
+                        <div class="circlePatty">
+                            <img [src]="pattyIngrediants.image.replace('.png', '') + 'display.png'" class="card-img" alt="Image of patty" />
                         </div>
                         <h3>{{pattyIngrediants.name}}</h3>
                         <button (click)="showPopup = true;  selectedIngrediants = pattyIngrediants">Update</button>
@@ -77,8 +77,8 @@
                     <div class="top-circle">
                         <h4>{{cheeseIngrediants.amount}}</h4>
                     </div>
-                    <div class="circle">
-                        <img [src]="cheeseIngrediants.image" class="card-img"/>
+                    <div class="circleCheese">
+                        <img [src]="cheeseIngrediants.image.replace('.png', '') + 'display.png'" class="card-img" alt="Image of cheese" />
                     </div>
                     <h3>{{cheeseIngrediants.name}}</h3>
                     <button (click)="showPopup = true; selectedIngrediants = cheeseIngrediants">Update</button>
@@ -99,8 +99,8 @@
                         <div class="top-circle">
                             <h4>{{garnishIngrediants.amount}}</h4>
                         </div>
-                        <div class="circle">
-                            <img [src]="garnishIngrediants.image" class="card-img"/>
+                        <div class="circleGarnish">
+                            <img [src]="garnishIngrediants.image.replace('.png', '') + 'display.png'" class="card-img" alt="Image of garnish" />
                         </div>
                         <h3>{{garnishIngrediants.name}}</h3>
                         <button (click)="showPopup = true; selectedIngrediants = garnishIngrediants">Update</button>
