@@ -19,7 +19,7 @@
   <h3 align="center">Juicier</h3>
 
   <p align="center">
-    A build-a-burger full MERN stack application <br>
+        A build-a-burger full MERN stack application <br>
       <a href="https://github.com/AlexaPea/Juicier-AngularProject"><strong>Explore the docs »</strong></a>
    <br>
 </p>
@@ -39,12 +39,15 @@
     * [Reviews & Testing](#reviews--testing)
     * [Challenges, Highlights & Learnings](#challenges-highlights--learnings)
     * [Future Implementation](#future-implementation)
-* [Roadmap](#roadmap)
-* [Contributing](#contributing)
-* [Authors](#authors)
-* [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
+* [Final Outcome](#final-outcome)
+  * [Video Demonstration](#video-demonstration)
+  * [Roadmap](#roadmap)
+  * [Contributing](#contributing)
+  * [Authors](#authors)
+  * [License](#license)
+  * [Contact](#contact)
+  * [Acknowledgements](#acknowledgements)
+
 
 
 
@@ -221,14 +224,18 @@ In future, I would like to explore more above and beyond features. In addition t
 ![image4](mockups/mockup2.png)
 ![image4](mockups/mockup3.png)
 
-<br/>
+### Video Demonstration
 
-## Roadmap
+To see a run through of the application, click below:
+
+[View Demonstration](https://youtu.be/oTVXJW1MCOY)
+
+### Roadmap
 
 See the [open issues](https://github.com/AlexaPea/DV300_Term1_Juicier) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
-## Contributing
+### Contributing
 
 Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -240,7 +247,7 @@ Contributions are what makes the open-source community such an amazing place to 
 
 
 <!-- AUTHORS -->
-## Authors
+### Authors
 
 * **Alexa Pettitt** - [AlexaPea](https://github.com/AlexaPea/DV300_Term1_Juicier)
 
@@ -251,13 +258,13 @@ This project is protected by all rights reserved. No part of this repository may
 
 
 <!-- LICENSE -->
-## Contact
+### Contact
 
 * **Alexa Pettitt** - [alexapettitt14@gmail.com](mailto:alexapettitt14@gmail.com) - [@instagram_handle](https://www.instagram.com/byAlexaPettitt/) 
 * **Project Link** - https://github.com/AlexaPea/DV300_Term1_Juicier
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+### Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
 * [My Lecturer: Armand Pretorius](https://github.com/Armand-OW)
 * [Stack Overflow](https://stackoverflow.com/)
