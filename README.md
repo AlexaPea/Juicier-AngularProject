@@ -1,9 +1,9 @@
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/AlexaPea/Juicier-AngularProject?color=%000000)
-![GitHub watchers](https://img.shields.io/github/watchers/AlexaPea/Juicier-AngularProject?color=%000000)
-![GitHub language count](https://img.shields.io/github/languages/count/AlexaPea/Juicier-AngularProject?color=%000000)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AlexaPea/Juicier-AngularProject?color=%000000)
+![GitHub repo size](https://img.shields.io/github/repo-size/AlexaPea/Juicier-AngularProject)
+![GitHub watchers](https://img.shields.io/github/watchers/AlexaPea/Juicier-AngularProject)
+![GitHub language count](https://img.shields.io/github/languages/count/AlexaPea/Juicier-AngularProject)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AlexaPea/Juicier-AngularProject)
 
 
 <!-- HEADER SECTION -->
@@ -215,10 +215,13 @@ I now believe I am better equipt to handle all future projects.
 ### Future Implementation
 In future, I would like to explore more above and beyond features. In addition to this, I would like to implement loaders to further enhance the user experience.
 
+
+## Final Outcome
+
 ![image4](mockups/mockup2.png)
+![image4](mockups/mockup3.png)
 
 <br/>
-
 
 ## Roadmap
 
