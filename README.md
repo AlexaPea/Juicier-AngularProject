@@ -1,55 +1,71 @@
-# Juicier
- Juicier - Team 1 Inventory Management application for DV300
+<br />
 
-<br/>
+![GitHub repo size](https://img.shields.io/github/repo-size/AlexaPea/Juicier-AngularProject?color=%000000)
+![GitHub watchers](https://img.shields.io/github/watchers/AlexaPea/Juicier-AngularProject?color=%000000)
+![GitHub language count](https://img.shields.io/github/languages/count/AlexaPea/Juicier-AngularProject?color=%000000)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AlexaPea/Juicier-AngularProject?color=%000000)
 
-![Github label](https://img.shields.io/badge/Juicier-2023-orange)
-<br/>
 
 <!-- HEADER SECTION -->
-<h3 align="center" style="padding:1;margin:0;"> Designed & Developed by:</3>
-<h5 align="center" style="padding:1;margin:0;">Alexa Pettitt</5>
-
-<h6 align="center">DV 300 | Term 1 | 2023 </5>
+<h5 align="center" style="padding:0;margin:0;">Alexa Pettitt</h5>
+<h5 align="center" style="padding:0;margin:0;">21100290</h5>
+<h6 align="center">DV300 | 2023</h6>
 </br>
 <p align="center">
+  <a href="https://github.com/AlexaPea/Juicier-AngularProject">
+    <img src="juicier/src/assets/logo.png" alt="Logo" width="230" style="display:block; margin: 0 auto;">
+  </a>
+  
+  <h3 align="center">Juicier</h3>
 
-<a href="https://github.com/AlexaPea/DV300_Term1_Juicier">
-<img src="juicier/src/assets/logo.png" alt="Logo" width="230">
-
-</a>
+  <p align="center">
+    A build-a-burger full MERN stack application <br>
+      <a href="https://github.com/AlexaPea/Juicier-AngularProject"><strong>Explore the docs »</strong></a>
+   <br>
+</p>
 
 ## Table of Contents
-
 * [About The Project](#about-the-project)
-    * [Project Description](#project-description)
-    * [Built With](#built-with)
- * [Getting Started](#getting-started)  
-    * [Prerequisites](#prerequisites)
-    * [How To Install](#how-to-install)
-* [Development Process](#developmentProcess)
-* [Final Outcomes](#developmentProcess)
+  * [Project Description](#project-description)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [How To Install](#how-to-install)
+* [Development Process](#development-process)
+  * [Concept Process](#concept-process)
+  * [Implementation Process](#implementation-process)
+    * [The Functionality](#the-functionality)
+    * [Above & Beyond](#above--beyond)
+    * [Reviews & Testing](#reviews--testing)
+    * [Challenges, Highlights & Learnings](#challenges-highlights--learnings)
+    * [Future Implementation](#future-implementation)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [Authors](#authors)
 * [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
 
-![image0](mockups/2.png)
-<br/>
-<!-- PROJECT DESCRIPTION -->
-## About the Project
-We were tasked with creating a complete MEAN Stack application, through the use of typescript and Angular, that would allow for inventory management - following a concept of our choosing. 
 
-I chose to create a build-a-burger website, and thus, came up with the concept of Juicier! A fun and playful website that encourages an exciting user experience!
+<br/>
+
+## About the Project
+
+<a href="https://github.com/AlexaPea/DV300_Term1_Juicier">
+<img src="mockups/mockup1.png" alt="Logo">
+</a>
+
+
 
 ### Project Description
 Juicier is a full MERN stack application that allows users to keep track of their ingredient and burger inventory across the franchises different locations! It allows for easy inventory management, ensuring users a quick and easy solution to their management needs!
 
 ### Built With
-* [Angular]
-* [Typescript]
-* [MONGODB]
-* [Javascript]
+* [Angular](https://angular.io/)
+* [Typescript](https://www.typescriptlang.org/)
+* [MongoDB](https://www.mongodb.com/)
+* [Javascript](https://www.javascript.com/)
 
 
 <!-- GETTING STARTED -->
@@ -86,18 +102,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-![image1](mockups/4.png)
+
 
 ## Concept Process
 `Conceptual Process`
-#### Brainstorm
-In order to ensure that Code Quest exudes a distinct brand identity, We initially brainstormed ideas of how we could create a user friendly website, that would appeal to the developers of Open Window.
+To kickstart the conceptual phase, I delved into the project brief, ensuring a clear and thorough understanding of the requirements and objectives.
 
-#### Mood boards
-Once we had a general idea of the identity of our website - we created mood boards and discussed the stylistic approach we would take. We ultimately decided on a clean, minimalistic style with quirky illustrations. Balancing professional and fun.
+<img src="mockups/brief.png" alt="Logo">
 
-#### Wireframes
-Lastly, we began wireframing  -this allowed for smoother front-end development,
+Once I was aware of the requirements, I was able to progress to the ideation process.
+
+<img src="mockups/concept1.png" alt="Logo">
+<img src="mockups/concept2.png" alt="Logo">
+
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -121,33 +138,43 @@ Node. js is a platform for building i/o applications which are server-side event
 * Using MONGO DB ATLASS as our backend server
 * Utilized JWT for password hashing 
 
-![image2](mockups/1.png)
 
 ### The Functionality
 
+
+#### Alternative Fun Login 
+<img src="mockups/function1.png" alt="function">
+We keep it fun - and that's why we created an alternative to the regular old password.
+
+Users can now login using their username and by naming their favourite burger! But do not worry! We still make sure your favourite burger is kept a secret through password hashing!
+
+
 #### Ingredient Inventory Management
+<img src="mockups/function2.png" alt="function">
 Juicier is a user-first website, meaning creating a user-friendly website is a top priority. 
 
 I have established this through creating an inventory management Ingredient page which provides the user the opportunity to view their ingrediants in categories and provides the amount of each! Moreover, the user is provided the power to update these amounts!
 
 #### Burger Inventory Management
+<img src="mockups/function3.png" alt="function">
 Burgers, burgers, burgers! A website dedicated to burgers needs to make them easy to manage!
 
 Similary to the Ingredient Inventory, an overview of the burgers and their amounts are provided. They are devided into 2 categories - the menu burger and the special creations. This ensures a pleasent user experience by making use of the principles of design!
 
 But that's not all! You can also build more burgers, granted you have enough ingredients, and watch your inventory update accordingly!
 
-#### Alternative Fun Login 
-We keep it fun - and that's why we created an alternative to the regular old password.
-
-Users can now login using their username and by naming their favourite burger! But do not worry! We still make sure your favourite burger is kept a secret through password hashing!
+#### Creation Station
+<img src="mockups/function5.png" alt="function">
+Create your own personalized burger recipes! Click through the ingredients and invent your own masterpiece.
 
 #### Manage each location
+<img src="mockups/function5.png" alt="function">
 Swopping and switching locations at a click of a button!
 
 You are now able to view all the ingredients and burgers dependent on their location in order to ensure users are easily kept up to date and can quickly update each location inventory accordingly!
 
 #### Location Breakdown
+<img src="mockups/function6.png" alt="Logo">
 Summaries - we all love them! A nice breakdown of everything you need to know.
 
 And that is precisely why we created the location page. A page that gives our users a breakdown of the ingrediants available in each location! Making it short, sweet, easy to understanding and bring your attention to the ingredients that are running low.
@@ -163,6 +190,9 @@ Therefore,  we implemented a 404 page. To ensure that the user can always find t
 
 * Creation Station - create your own personalized burger recipes! Click through the ingredients and invent your own masterpiece.
 * BehaviorSubject - allows the changes made in the select to reflect immidiatly on the page.
+
+### Reviews & Testing
+In order to test the application I gathered a group of Open Window students to use the application and complete specific goals - this uncovered a few bugs which I was then able to fix.
 
 ### Challenges, Highlights & learnings
 
@@ -185,12 +215,26 @@ I now believe I am better equipt to handle all future projects.
 ### Future Implementation
 In future, I would like to explore more above and beyond features. In addition to this, I would like to implement loaders to further enhance the user experience.
 
+![image4](mockups/mockup2.png)
 
-![image4](mockups/3.png)
 <br/>
 
 
+## Roadmap
+
 See the [open issues](https://github.com/AlexaPea/DV300_Term1_Juicier) for a list of proposed features (and known issues).
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
 
 <!-- AUTHORS -->
 ## Authors
@@ -200,20 +244,25 @@ See the [open issues](https://github.com/AlexaPea/DV300_Term1_Juicier) for a lis
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.\
+This project is protected by all rights reserved. No part of this repository may be reproduced, distributed, or transmitted in any form or by any means, without the prior written permission of the repository owner.
+
 
 <!-- LICENSE -->
 ## Contact
 
-<!-- * **Shanre Scheepers** - [email@address](mailto:shanrescheepers@gmail.com) - [@instagram_handle](https://www.instagram.com/shanre_scheepers/)  -->
+* **Alexa Pettitt** - [alexapettitt14@gmail.com](mailto:alexapettitt14@gmail.com) - [@instagram_handle](https://www.instagram.com/byAlexaPettitt/) 
 * **Project Link** - https://github.com/AlexaPea/DV300_Term1_Juicier
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
-* https://stackoverflow.com/
-* https://angular.io/
-* https://material.angular.io/
+* [My Lecturer: Armand Pretorius](https://github.com/Armand-OW)
+* [Stack Overflow](https://stackoverflow.com/)
+* [Angular Documentation](https://angular.io/)
+* [Angular Material](https://material.angular.io/)
 
-<!-- * [StackOverflow ](https://stackoverflow.com/questions/37966288/could-i-download-the-event-log-from-the-firebase-console)
-* [Headers Error](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers) -->
+<!-- Refer to https://shields.io/ for more information and options about the shield links at the top of the ReadMe file -->
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/alexa-pettitt/
+[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&colorB=555
+[instagram-url]: https://www.instagram.com/byAlexaPettitt/
