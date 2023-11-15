@@ -252,7 +252,7 @@ Contributions are what makes the open-source community such an amazing place to 
 * **Alexa Pettitt** - [AlexaPea](https://github.com/AlexaPea/DV300_Term1_Juicier)
 
 <!-- LICENSE -->
-## License
+### License
 
 This project is protected by all rights reserved. No part of this repository may be reproduced, distributed, or transmitted in any form or by any means, without the prior written permission of the repository owner.
 
