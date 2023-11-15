@@ -70,7 +70,7 @@ Juicier is a full MERN stack application that allows users to keep track of thei
 
 <!-- GETTING STARTED -->
 ## Getting Started
-The following steps and isntructions will allow you to copy the project on your local machine for development, practising and testing purposes.
+The following steps and instructions will allow you to copy the project on your local machine for development, practising and testing purposes.
 
 
 ### How to Install
